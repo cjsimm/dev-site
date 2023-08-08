@@ -1,4 +1,12 @@
 import styles from './page.module.css';
+import type { Metadata } from 'next';
+
+const page = 'Contact';
+
+export const metadata: Metadata = {
+  title: `Dev Site - ${page}`,
+  description: '...',
+}
 
 export default function contact() {
     return (

@@ -11,7 +11,7 @@ const noto_mono = Noto_Sans_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Dev Site',
+  title: `Dev Site`,
   description: '...',
 }
 
