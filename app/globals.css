@@ -1,18 +1,23 @@
 :root {
-  --max-width: 1100px;
+  --max-width: 1980px;
   --grey: #efefef;
   --green: #4ecbaa; 
-  --red: #9d2d48;
+  --red: #c24a66;
   --blue: #D7EAFF;
+  --header-height: 15vh;
+  --header-margin: 5vh;
+  --footer-height: 2vh;
+  --site-wMargin: 1vw;
   box-sizing: border-box;
 }
-/* * {
-  border: solid;
-} */
+* {
+  /* border: solid; */
+  margin: 0;
+  box-sizing: border-box;
+}
 html {
   max-width: var(--max-width);
   line-height: 1.15;
-
 }
 /* header and navbar */
 .site-header {
@@ -20,7 +25,8 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 5vh;
+  margin-bottom: var(--header-margin);
+  min-height: var(--header-height)
 }
 .navbar-above {
   width: 70%
@@ -51,16 +57,47 @@ html {
   transition: opacity 0.75s;
   text-decoration: underline;
 }
+/* Section Styling */
 .sectionBlock {
   min-height: 40vh;
 }
-.
+.bgGrey {
+  background-color: var(--grey);
+}
+.bgGreen {
+  background-color: var(--green);
+}
+.bgRed {
+  background-color: var(--red);
+}
+.bgBlue {
+  background-color: var(--blue);
+}
 .flexCentered {
   display: flex;
   flex-direction: column;
-  margin: 0 0vw;
+  margin: 0vh var(--site-wMargin);
+  gap: 2vh;
+  justify-content: center;
+  align-items: center;
 }
 .flexCentered > h1 {
-  margin: 0 auto;
-  margin-top: 1vh;
+  margin: 2vh auto;
+}
+.flexCentered > p {
+  margin: auto;
+}
+.sectionFillPage {
+  min-height: calc(100vh - var(--header-height) - var(--header-margin) - var(--footer-height));
+}
+/* Footer */
+.siteFooter {
+  display: flex;
+  flex-direction: row;
+  min-height: var(--footer-height);
+  margin: 0 var(--site-wMargin);
+}
+.siteFooter > p {
+  margin-left: auto;
+  margin-right: 1vw;
 }

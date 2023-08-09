@@ -1,6 +1,16 @@
 .contactForm {
     display: flex;
     flex-direction: column;
+    max-width: 600px;
+/*     align-items: center;
+    justify-content: center; */
+    margin-bottom: 1vh;
+    gap: 2vh;
+}
+.cfContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
 .cfName {
 
@@ -10,7 +20,7 @@
 }
 .cfSubmit {
     border: none;
-    width: 15%;
+    width: 30%;
     min-width: 15%;
     padding: 0.5% 1%;
     margin-top: 2vh;   

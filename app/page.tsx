@@ -12,7 +12,15 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
-      <section className={`sectionBlock flexCentered`} style={{'background-color':'green'}}>
+      <section className={`sectionBlock flexCentered bgGreen`}>
+        <h1>Hello.</h1>
+        <p>This is placeholder text to test the section styles</p>
+      </section>
+      <section className={`sectionBlock flexCentered bgGrey`}>
+        <h1>Hello.</h1>
+        <p>This is placeholder text to test the section styles</p>
+      </section>
+      <section className={`sectionBlock flexCentered bgBlue`}>
         <h1>Hello.</h1>
         <p>This is placeholder text to test the section styles</p>
       </section>
