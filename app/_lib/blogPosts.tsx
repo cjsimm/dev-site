@@ -16,13 +16,6 @@ export interface blogPost extends blogPostMetadata {
     text: string
 }
 
-/* export type blogPost = {
-    title: string,
-    summary: string,
-    date: string,
-    text?: string
-} */
-
 const blogPostDirectory = path.join(process.cwd(), 'app/_blogposts');
 
 //gets all ids (filenames) for all blogposts in the _blogposts directory
@@ -57,31 +50,3 @@ export async function getPost(id: string): Promise<blogPost> {
         ...matterResult.data as {title: string, summary: string, date: string}
     }
 }
-
-
-/* export async function getPostMeta() {
-    return [{
-        title: 'hello',
-        date: '02-06-92',
-        text: 'gay gay gay'
-    },
-    {
-        title: 'lilya',
-        date: '02-06-92',
-        text: 'gay gay gay'
-    }]
-}
-
-export function getPostContent(title: string): blogPost {
-    //code here to return content based on passed title (will be same 
-    //as dynamicpath)
-    let data: blogPost;
-    if (title === 'lilya') {
-        data = {title: 'lilya', date: '02-06-92', text: 'gay gay gay'}
-    } else if (title === 'hello') {
-       data = {title: 'hello', date: '02-06-92', text: 'gay gay gay'}
-    } else {
-        data = {title: 'hello', date: '02-06-92', text: 'gay gay gay'}
-    }
-    return data;
-} */
