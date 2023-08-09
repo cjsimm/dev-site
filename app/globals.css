@@ -20,6 +20,9 @@ html {
   max-width: var(--max-width);
   line-height: 1.15;
 }
+h1 {
+  margin: 0 auto;
+}
 /* header and navbar */
 .site-header {
   display: flex;
@@ -63,18 +66,51 @@ html {
 .sectionBlock {
   min-height: 40vh;
 }
+.sectionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.sectionContent p {
+  margin: 0 5vw;
+}
+.sectionContent button {
+  transition: transform 0.3s;
+}
+.sectionContent button:hover {
+  transform: scale(1.05);
+}
+.sectionFillPage {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+/* grey section styles */
 .bgGrey {
   background-color: var(--grey);
 }
+.bgGrey > .sectionContent button { 
+  background-color: var(--red);
+  padding: 1rem;
+  font-size: 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: none;
+}
+/* green section styles */
 .bgGreen {
   background-color: var(--green);
 }
+/* red section styles */
 .bgRed {
   background-color: var(--red);
 }
+/* blue section styles */
 .bgBlue {
   background-color: var(--blue);
 }
+.bgBlue > .sectionContent > button { 
+  background-color: var(--grey);
+}
+
 .flexCentered {
   display: flex;
   flex-direction: column;
@@ -89,17 +125,6 @@ html {
 .flexCentered > div {
   margin: auto;
   margin-top: 5vh;
-}
-.sectionContent {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.sectionContent p {
-  margin: 0 5vw;
-}
-.sectionFillPage {
-  min-height: calc(100vh - var(--header-height) - var(--footer-height));
 }
 /* Footer */
 .siteFooter {

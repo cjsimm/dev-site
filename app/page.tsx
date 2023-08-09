@@ -20,8 +20,11 @@ export default function Home() {
         </div>
       </section>
       <section className={`sectionBlock flexCentered bgGrey`}>
-        <h1>Hello.</h1>
-        <p>Available in <Link href="/cv/static">PDF Format</Link></p>
+        <div className="sectionContent">
+          <h1>Find out more</h1>
+          <button>Interactive CV</button>
+          <p>Also available in <Link href="/cv/static">PDF Format</Link></p>
+        </div>
       </section>
       <section className={`sectionBlock flexCentered bgBlue`}>
         <h1>Latest Blog Posts</h1>
