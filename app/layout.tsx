@@ -43,6 +43,9 @@ export default function RootLayout({
           </nav>
         </header>
         {children}
+        <footer className="siteFooter bgGrey">
+          <p>Copyright BlahBlah</p>
+        </footer>
       </body>
     </html>
   )
