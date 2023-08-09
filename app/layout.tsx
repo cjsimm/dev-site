@@ -7,7 +7,7 @@ import { Noto_Sans_Mono } from 'next/font/google';
 const noto_mono = Noto_Sans_Mono({
   subsets: ['latin'],
   display: 'swap',
-  weight: '400',
+  weight: ['400','500'],
 })
 
 export const metadata: Metadata = {

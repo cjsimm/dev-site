@@ -22,7 +22,7 @@ export default function Home() {
       <section className={`sectionBlock flexCentered bgGrey`}>
         <div className="sectionContent">
           <h1>Find out more</h1>
-          <button>Interactive CV</button>
+          <button>Curriculum Vitae</button>
           <p>Also available in <Link href="/cv/static">PDF Format</Link></p>
         </div>
       </section>

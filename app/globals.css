@@ -31,7 +31,8 @@ h1 {
   align-items: center;
   /* margin-bottom: var(--header-margin); */
   border-bottom: var(--header-margin);
-  min-height: var(--header-height)
+  min-height: var(--header-height);
+  /* background-color: var(--grey); */
 }
 .navbar-above {
   width: 70%
@@ -78,7 +79,9 @@ h1 {
   transition: transform 0.3s;
 }
 .sectionContent button:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
+  font-weight: 500;
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
 }
 .sectionFillPage {
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
@@ -110,7 +113,6 @@ h1 {
 .bgBlue > .sectionContent > button { 
   background-color: var(--grey);
 }
-
 .flexCentered {
   display: flex;
   flex-direction: column;

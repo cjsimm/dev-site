@@ -1,7 +1,7 @@
-export default function Post() {
+export default function Directory() {
     return (
       <main>
-        <section>
+        <section className="flexCentered sectionFillPage">
           <h1>Blogpost</h1>
         </section>
       </main>
