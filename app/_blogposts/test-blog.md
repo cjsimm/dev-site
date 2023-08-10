@@ -1,7 +1,7 @@
 ---
 title: 'a second test blog post (2)'
 summary: 'a test blog post that will have massive impact on the useability of my website'
-date: '2023-08-01'
+date: '2023-07-23'
 ---
 
 # This is a second test blog post
