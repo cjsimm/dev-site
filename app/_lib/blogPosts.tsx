@@ -55,6 +55,19 @@ export async function getPostMetadata(): Promise<blogPostMetadata[]> {
     }); */
 }
 
+//sorts blogposts by date (can be expanded later to sort by other values)
+export function sortPosts(postMetadata: blogPostMetadata[]): blogPostMetadata[] {
+    return postMetadata.sort(
+        (a, b) => {
+            if (a.date < b.date) {
+            return 1;
+            } else {
+            return -1;
+            }
+        }
+    );
+}
+
 
 //takes a blogpost title returned as an argument from getPostMetadata and retrieves/parses the blogpost for display on its generated dynamic route 
 export async function getPost(id: string): Promise<blogPost> {
