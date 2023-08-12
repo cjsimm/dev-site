@@ -1,5 +1,5 @@
 import { blogPostMetadata, getPostMetadata, sortPosts } from "../_lib/blogPosts";
-import BlogPostLink from "../_components/BlogPostLink";
+import BlogPostLink from "../_components/blogPostLink";
 import Link from "next/link";
 
 export default async function Directory() {
