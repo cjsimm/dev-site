@@ -56,3 +56,6 @@
     font-weight: bold;
     box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
 }
+.cfSubmit:disabled {
+    opacity: 0.4;
+}

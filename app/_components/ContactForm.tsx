@@ -1,30 +1,36 @@
 "use client";
 import styles from '../contact/page.module.css';
-
 import { useState } from "react";
 
 export default function ContactForm() {
+    const [sending, setSending] = useState(false);
     const handleSubmit = async (e: any) => {
         e.preventDefault();
+        setSending(true);
         //grab submitted fields from event target (typescript complains due to using array access but cant find a better way due to nextjs renaming the classes)
         const payload = {
             email: String(e.target[0].value),
             subject: String(e.target[1].value),
             message: String(e.target[2].value),
         }
-        console.log(payload);
         const response = await fetch("/api/contact",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-
             },
             body: JSON.stringify(payload), 
         });
         if (response.ok) {
-            console.log("Contact form message sent successfully");
+            console.log("Message successfully sent via contact form");
+            setSending(false);
+            //clear form values to symbolize that the message was sent
+            e.target[0].value = '';
+            e.target[1].value = '';
+            e.target[2].value = '';
         } else {
-            console.log("error sending message");
+            console.log("Message failed to be sent via contact form.")
+            setSending(false);
+            //create some action in the ui to show that the form was not sent by email
         }
     }
     return (
@@ -43,7 +49,7 @@ export default function ContactForm() {
             </div>
             <div className={styles.cfContainer}>
             <label htmlFor='submit'></label>
-            <input className={styles.cfSubmit} id="submit" type="submit" form='contact'/>
+            <input className={styles.cfSubmit} id="submit" type="submit" form='contact' disabled={sending} />
             </div>
         </form>
     );
