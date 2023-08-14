@@ -26,7 +26,7 @@ export default async function Home() {
         </div>
       </section>
       <section className={`sectionBlock flexCentered bgGrey`}>
-        <div className="sectionContent">
+        <div className="sectionContent sectionContentCentered">
           <h1>Find out more</h1>
           <Link className="largeButton" href="/contact/cv-non-interactive.html">Curriculum Vitae</Link>
           <p>Also available in <Link href="/contact/cv-non-interactive.pdf">PDF Format</Link></p>
@@ -34,7 +34,9 @@ export default async function Home() {
       </section>
       <section className={`sectionBlock flexCentered bgBlue`}>
         <h1>Latest Blog Post</h1>
-        <BlogPostLink data={latestBlogPost} />
+        <div className='sectionContent'>
+          <BlogPostLink data={latestBlogPost} />
+        </div>
       </section>
     </main>
   )
