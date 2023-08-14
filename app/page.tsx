@@ -22,14 +22,16 @@ export default async function Home() {
       <section className={`sectionBlock flexCentered bgGreen`}>
         <h1>Hello.</h1>
         <div className="sectionContent">
-          <p>This is placeholder text to test the section styles</p>
+          <p>I'm a freelance data and machine learning engineer with an interest in web development and linux. This is a space to host my blog and anything else useful 
+            that I'd like to share.
+          </p>
         </div>
       </section>
       <section className={`sectionBlock flexCentered bgGrey`}>
         <div className="sectionContent sectionContentCentered">
           <h1>Find out more</h1>
-          <Link className="largeButton" href="/contact/cv-non-interactive.html">Curriculum Vitae</Link>
-          <p>Also available in <Link href="/contact/cv-non-interactive.pdf">PDF Format</Link></p>
+          <Link className="largeButton" target="_blank" href="/contact/cv-non-interactive.html">Curriculum Vitae</Link>
+          <p>Also available in <Link target="_blank" href="/contact/cv-non-interactive.pdf">PDF Format</Link></p>
         </div>
       </section>
       <section className={`sectionBlock flexCentered bgBlue`}>

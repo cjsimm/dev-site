@@ -35,21 +35,22 @@ export default function ContactForm() {
     }
     return (
         <form className={styles.contactForm} onSubmit={handleSubmit} id="contact">
-            <div className={styles.cfContainer}>
-            <label htmlFor="name">Email Address*:</label>
-            <input className={styles.cfName} name="name" type="text" form='contact' required/>
+            <div className={styles.contactInfo}>
+                <div className={styles.cfContainer}>
+                    <label htmlFor="name">Email*:</label>
+                    <input className={styles.cfName} name="name" type="text" form='contact' required/>
+                </div>
+                <div className={styles.cfContainer}>
+                    <label htmlFor="subject">Subject*:</label>
+                    <input className={styles.cfSubject} id="subject" type="text" form='contact' required/>
+                </div>
+            </div> 
+            <div className={styles.cfMessageContainer}>
+                <label htmlFor="message">Message*:</label>
+                <textarea className={styles.cfMessage} id="message" form='contact' required/>
             </div>
-            <div className={styles.cfContainer}>
-            <label htmlFor="subject">Subject*:</label>
-            <input className={styles.cfSubject} id="subject" type="text" form='contact' required/>
-            </div>
-            <div className={styles.cfContainer}>
-            <label htmlFor="message">Message*:</label>
-            <textarea className={styles.cfMessage} id="message" form='contact' required/>
-            </div>
-            <div className={styles.cfContainer}>
-            <label htmlFor='submit'></label>
-            <input className={styles.cfSubmit} id="submit" type="submit" form='contact' disabled={sending} />
+            <div className={styles.cfSubmitContainer}>
+                <input className={styles.cfSubmit} id="submit" type="submit" form='contact' value="Submit" disabled={sending} />
             </div>
         </form>
     );

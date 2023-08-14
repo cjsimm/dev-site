@@ -1,60 +1,60 @@
 .contactForm {
     display: flex;
     flex-direction: column;
-    max-width: 98vw;
-/*     align-items: center;
-    justify-content: center; */
     margin-bottom: 1vh;
     gap: 2vh;
+    width: 100%;
+}
+.contactInfo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
 }
 .cfContainer {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    margin: 0 5vw;
+    min-width: 48%;
 }
-.cfContainer > label {
-    min-width: 9rem;
+.cfContainer label {
+    display:inline-block;
+    line-height: 1.5rem;
+    width: 25%;
 }
-.cfContainer > input {
-    padding: 0;
-    margin: 0;
-    vertical-align: top;
+.cfContainer input {
+    margin-right: 1rem;
+    width: 100%;
+    min-width: 20%;
+    padding-left: 0.3rem;
+    height: 1.3rem;
+
 }
-.cfName {
-    width: 30vw;
-    max-width: 500px;
-    background-color: var(--grey);
+.cfMessageContainer {
+    width: 100%;
 }
-.cfSubject {
-    width: 50vw;
-    max-width: 700px;
-    background-color: var(--grey);
+.cfMessageContainer label {
+    line-height: 2rem;
 }
 .cfMessage {
     height: 40vh;
-    max-height: 50vh;
-    width: 700px;
-    background-color: var(--grey);
-    
+    width: 100%;
+    min-width: 50%;
+    max-height: 50vh;   
 }
 .cfSubmit {
     border: none;
-    max-width: 8rem;
-    min-width: 4rem;
-    height: 2rem;
-    padding: 0.5% 1%;
-    margin-top: 2vh;
     cursor: pointer;   
     transition: background-color 0.3s, transform 0.3s;
-    background-color: var(--grey);
-    
+    background-color: var(--grey); 
+    max-width: 50%;
+    margin-right: auto;
+    height: 2rem;
+    width: 5rem;
 }
-.cfSubmit:hover {
-    background-color: var(--green);
-    transform: scale(1.05);
-    font-weight: bold;
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+@media (hover: hover) {
+    .cfSubmit:hover {
+        background-color: var(--green);
+        transform: scale(1.05);
+        font-weight: bold;
+        box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+    }
 }
 .cfSubmit:disabled {
     opacity: 0.4;

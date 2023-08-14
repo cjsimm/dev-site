@@ -9,7 +9,7 @@
   --footer-height: 2vh;
   --site-wMargin: 0vw;
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: 20px;
 }
 * {
   /* border: solid; */
@@ -84,13 +84,18 @@ html {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin: 0 15%;
+  margin: 2vh 15%;
+  margin-bottom: 4vh;
   align-items: center;
 }
-.sectionBlock > .sectionContentCentered {
+.sectionContent p {
+  text-align: left;
+}
+/* .sectionBlock > .sectionContentCentered {
   text-align: center;
   margin: auto;
-}
+} */
+
 /* .sectionContent p {
   margin: 0 5vw;
 } */
@@ -143,17 +148,21 @@ html {
   display: flex;
   flex-direction: column;
   margin: 0vh var(--site-wMargin);
-  gap: 2vh;
-/*   justify-content: center; */
+/*   gap: 2vh; */
+  justify-content: center;
 /*   align-items: center; */
 }
-.flexCentered > h1 {
+.flexCentered > h1 ,.flex > h1 {
   margin: 2vh auto;
 }
-/* .flexCentered > div {
-  margin: auto;
-  margin-top: 5vh;
-} */
+.flex {
+  display: flex;
+  flex-direction: column;
+  margin: 0vh var(--site-wMargin);
+}
+.flex h1 {
+  margin:
+}
 /* Footer */
 .siteFooter {
   display: flex;
@@ -180,6 +189,7 @@ html {
 .blogPostLink > p:last-child {
   font-size: 0.5rem;
   text-decoration: underline;
+  text-align: left;
 }
 .blogTitle {
   display: flex;

@@ -24,14 +24,14 @@ export default function RootLayout({
     <html lang="en" className={noto_mono.className}>
       <body>
         <header className='site-header'>
-          <div className="logo-container">
+{/*           <div className="logo-container">
             <Image
               src="/header-logo.png"
               width={500}
               height={500}
               alt="Site Logo"
             />
-          </div>
+          </div> */}
           <h1>cSimm</h1>
           <nav className='navbar-above'>
             <ul className='navbar-container'>

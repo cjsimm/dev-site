@@ -17,7 +17,7 @@ export default async function Directory() {
 
   return (
     <main>
-      <section className="flexCentered sectionFillPage bgBlue">
+      <section className="sectionFillPage flex bgBlue">
         <h1>Blog</h1>
           {blogPostMetadata.map((item, index) => (
             <div className="sectionContent" key={index}>
