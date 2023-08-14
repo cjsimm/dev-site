@@ -78,6 +78,7 @@ h1 {
 .largeButton {
   transition: transform 0.3s;
   text-decoration: none;
+  text-align: center;
 }
 .largeButton:hover {
   transform: scale(1.02);
