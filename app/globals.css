@@ -39,7 +39,7 @@ html {
   width: 40%
 }
 .navbar-container {
-  border-top: solid 1px #2C2C2C;
+  /* border-top: solid 1px #2C2C2C; */
   list-style: none;
   display: flex;
   flex-direction: row;
