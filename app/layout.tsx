@@ -32,7 +32,7 @@ export default function RootLayout({
               alt="Site Logo"
             />
           </div>
-          <h1>lanton.dev</h1>
+          <h1>cSimm</h1>
           <nav className='navbar-above'>
             <ul className='navbar-container'>
               <li><Link href="/">About</Link></li>
@@ -43,9 +43,9 @@ export default function RootLayout({
           </nav>
         </header>
         {children}
-        <footer className="siteFooter bgGrey">
+        {/* <footer className="siteFooter">
           <p>Copyright BlahBlah</p>
-        </footer>
+        </footer> */}
       </body>
     </html>
   )

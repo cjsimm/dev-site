@@ -8,7 +8,7 @@ import { getPostMetadata, sortPosts } from './_lib/blogPosts';
 const page = 'Home';
 
 export const metadata: Metadata = {
-  title: `Dev Site - ${page}`,
+  title: `cSimm - ${page}`,
   description: '...',
 }
 

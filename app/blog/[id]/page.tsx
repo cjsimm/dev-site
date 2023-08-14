@@ -1,5 +1,5 @@
 import { getPostIDs, getPost, blogPostMetadata, blogPost } from "@/app/_lib/blogPosts";
-
+import styles from './page.module.css';
 export const dynamic = 'force-static';
 export const dynamicParams = false;
 
@@ -16,11 +16,15 @@ export default async function Post({ params }: { params: { id: string } }) {
     const post = await getPost(params.id);
     return (
         <>
-        {/* <div className="sectionFillPage flexCentered bgBlue"> */}
-            <h1>{post.title}</h1>
-            <h2>{post.date}</h2>
-            <h1>{post.summary}</h1>
-            <div dangerouslySetInnerHTML={{ __html: post.text}} />
+        <div className="sectionFillPage flexCentered bgBlue">
+            <div className={styles.blogContainer}>
+                <div className={styles.blogHeader}>
+                    <h1>{post.title}</h1>
+                    <p>{post.date}</p>
+                </div>
+                <div className={styles.postContent} dangerouslySetInnerHTML={{ __html: post.text}} />
+            </div>
+       </div>
        </>
     )
 }

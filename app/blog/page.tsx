@@ -1,7 +1,13 @@
 import { blogPostMetadata, getPostMetadata, sortPosts } from "../_lib/blogPosts";
 import BlogPostLink from "../_components/blogPostLink";
 import Link from "next/link";
+import { Metadata } from "next";
 
+const page = 'Blog';
+export const metadata: Metadata = {
+  title: `cSimm - ${page}`,
+  description: '...',
+}
 export default async function Directory() {
   //retrieve blogpost metadata and sort by date descending
   const blogPostMetadata = await getPostMetadata()
@@ -11,16 +17,11 @@ export default async function Directory() {
 
   return (
     <main>
-      <section className="flexCentered sectionFillPage">
-        <h1>Blogpost</h1>
+      <section className="flexCentered sectionFillPage bgBlue">
+        <h1>Blog</h1>
           {blogPostMetadata.map((item, index) => (
-            <div key={index}>
+            <div className="sectionContent" key={index}>
               <BlogPostLink data={item} />
-              {/* <Link href={`/blog/${item.id}`}>
-                <p>{item.title}</p>
-                <p>{item.summary}</p>
-                <p>{item.date}</p>
-              </Link> */}
             </div>          
           ))}
       </section>
