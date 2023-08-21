@@ -32,7 +32,7 @@ export default function RootLayout({
               alt="Site Logo"
             />
           </div> */}
-          <h1>cSimm</h1>
+          <h1>cSimm.dev</h1>
           <nav className='navbar-above'>
             <ul className='navbar-container'>
               <li><Link href="/">About</Link></li>
