@@ -10,7 +10,7 @@ export default function BlogPostLink( { data }: { data: blogPostMetadata } ) {
                 <p>{data.title}</p>
             </div>
             <p>{data.summary}</p>
-            <p>Read More -`&gt;`</p>
+            <p>{"Read More ->"}</p>
         </Link>
     )
 }
