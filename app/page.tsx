@@ -22,8 +22,7 @@ export default async function Home() {
       <section className={`sectionBlock flexCentered bgGreen`}>
         <h1>Hello.</h1>
         <div className="sectionContent">
-          <p>I'm a freelance data and machine learning engineer with an interest in web development and linux. This is a space to host my blog and anything else useful 
-            that I'd like to share.
+          <p>{"I'm a freelance data and machine learning engineer with an interest in web development and linux. This is a space to host my blog and anything else useful that I'd like to share."}
           </p>
         </div>
       </section>

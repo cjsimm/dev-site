@@ -160,9 +160,6 @@ body {
   flex-direction: column;
   margin: 0vh var(--site-wMargin);
 }
-.flex h1 {
-  margin:
-}
 /* Footer */
 .siteFooter {
   display: flex;
