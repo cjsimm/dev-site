@@ -35,10 +35,10 @@ export default function RootLayout({
           <h1>cSimm.dev</h1>
           <nav className='navbar-above'>
             <ul className='navbar-container'>
-              <li><Link href="/">About</Link></li>
-              <li><Link href="/blog">Blog</Link></li>
-              <li><a href="https://github.com/cjsimm" target='_blank'>GitHub</a></li>
-              <li><Link href="/contact">Contact</Link></li>
+              <li><Link className="header-link" href="/">About</Link></li>
+              <li><Link className="header-link" href="/blog">Blog</Link></li>
+              <li><a className="header-link" href="https://github.com/cjsimm" target='_blank'>GitHub</a></li>
+              <li><Link className="header-link" href="/contact">Contact</Link></li>
             </ul>
           </nav>
         </header>

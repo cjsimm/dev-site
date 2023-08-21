@@ -53,13 +53,14 @@ body {
 .navbar-container > li {
   margin-top: 1vh;
 }
-.navbar-container > li > a {
+.navbar-container > li > a,.header-link {
   display: inline-block;
   text-decoration: none;
   list-style-type: none;
   opacity: 1;
   transform: scale(1);
   transition: opacity 0.75s, transform 0.75s;
+  color: inherit;
 }
 .navbar-container > li > a:visited {
   color: inherit;
@@ -103,6 +104,7 @@ body {
   transition: transform 0.3s;
   text-decoration: none;
   text-align: center;
+  color: inherit;
 }
 .largeButton:hover {
   transform: scale(1.02);
