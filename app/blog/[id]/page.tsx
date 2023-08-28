@@ -1,5 +1,6 @@
-import { getPostIDs, getPost, blogPostMetadata, blogPost } from "@/app/_lib/blogPosts";
+import { getPostIDs, getPost, getPostMetadata } from "@/app/_lib/blogPosts";
 import styles from './page.module.css';
+import { Metadata } from "next";
 export const dynamic = 'force-static';
 export const dynamicParams = false;
 
@@ -10,6 +11,15 @@ export async function generateStaticParams() {
         id: data.id,
     }))
 }
+
+export const generateMetadata = async ({ params }: { params: { id: string } }) => {
+    const post = await getPost(params.id);
+    return {
+        title: `${post.title}`,
+        description: post.summary,
+    }
+};  
+
 
 export default async function Post({ params }: { params: { id: string } }) {
     //retrieve post content to populate component
