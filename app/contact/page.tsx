@@ -4,7 +4,7 @@ import ContactForm from '../_components/ContactForm';
 
 const page = 'Contact';
 export const metadata: Metadata = {
-  title: `Dev Site - ${page}`,
+  title: `cSimm - ${page}`,
   description: '...',
 }
 
