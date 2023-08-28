@@ -11,8 +11,8 @@ const noto_mono = Noto_Sans_Mono({
 })
 
 export const metadata: Metadata = {
-  title: `Dev Site`,
-  description: '...',
+  title: `cSimm`,
+  description: 'Development site and blog',
 }
 
 export default function RootLayout({
