@@ -43,6 +43,7 @@
     cursor: pointer;   
     transition: background-color 0.3s, transform 0.3s;
     background-color: var(--grey); 
+    border: solid black 1px;
     max-width: 50%;
     margin-right: auto;
     height: 2rem;
