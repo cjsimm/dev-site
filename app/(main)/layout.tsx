@@ -1,4 +1,4 @@
-import './globals.css'
+import '../globals.css'
 import Image from '@/node_modules/next/image';
 import Link from '@/node_modules/next/link';
 import type { Metadata } from 'next';
@@ -44,9 +44,6 @@ export default function RootLayout({
           </header>
         </div>
         {children}
-        {/* <footer className="siteFooter">
-          <p>Copyright BlahBlah</p>
-        </footer> */}
       </body>
     </html>
   )

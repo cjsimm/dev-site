@@ -16,7 +16,7 @@ export interface blogPost extends blogPostMetadata {
     text: string
 }
 
-const blogPostDirectory = path.join(process.cwd(), 'app/_blogposts');
+const blogPostDirectory = path.join(process.cwd(), 'app/(main)/_blogposts');
 
 //gets all ids (filenames) for all blogposts in the _blogposts directory
 export async function getPostIDs(): Promise<{id: blogPostID}[]> {
