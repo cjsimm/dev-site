@@ -1,0 +1,9 @@
+.portfolioMenuContainer {
+    border: solid black 1px;
+    margin: 10vh 10vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2vw;
+}
+

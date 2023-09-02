@@ -1,0 +1,12 @@
+.body {
+    margin: 0;
+}
+.logo {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    opacity: 0.25;
+}
+.logo:hover {
+    opacity: 1;
+}
