@@ -5,5 +5,26 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 2vw;
+/*     justify-content: center;
+    align-items: center; */
+}
+/* this containers applies to both expanded and collapsed elements */
+.portfolioItemContainer {
+    width: 300px;
+    display: flex;
+    flex-direction: row; 
+/*     justify-content: center;
+    align-items: center; */
+}
+/* interactive button holding the portfolio item thumbnail and text div when collapsed
+expands the portfolio item when clicked
+*/
+.portfolioItemSmall {
+    display: flex;
+    gap: 10px;
+}
+/* div holding the text items of an item when collapsed */
+.itemSmallText{
+
 }
 
