@@ -8,13 +8,18 @@ import styles from "./components.module.css";
 //need to add button and click event handler here 
 export default function PortfolioItemExpanded({data, itemID, onExpand}: {
     data: portfolioItemData, 
-    itemID: number,
-    onExpand: (itemID: number) => void,
+    itemID: string,
+    onExpand: (itemID: string) => void,
 }): JSX.Element {
+
+    const handleClick = () => {
+        onExpand(itemID);
+    } 
     return (
-        <div className={styles.expandedItemContainer}>
+        <div className={styles.expandedItemContainer}> 
             <h1>{data.title}</h1>
             <p>{data.description}</p>
-        </div>
+            <button onClick={handleClick}>Close</button>
+        </div> 
     )
 }

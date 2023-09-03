@@ -2,11 +2,16 @@
     border: solid black 1px;
     margin: 10vh 10vw;
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 2vw;
+}
+.collapsedItemsContainer {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 2vw;
-/*     justify-content: center;
-    align-items: center; */
+    border: solid black 1px;
 }
 /* this containers applies to both expanded and collapsed elements */
 .portfolioItemContainer {
@@ -25,14 +30,12 @@ expands the portfolio item when clicked
     background: inherit;
     border: solid black 1px;
 }
-/* div holding the text items of an item when collapsed */
-.itemSmallText{
 
-}
 /* interactive button holding the portfolio item information when the item is expanded
 closes the expansion when clicked 
 */
-.portfolioItemExpanded {
-    border: solid black 1px;
+.expandedItemContainer {
+    display: flex;
+    flex-direction: column;
 }
 
