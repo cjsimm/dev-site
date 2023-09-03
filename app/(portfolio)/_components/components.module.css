@@ -22,9 +22,17 @@ expands the portfolio item when clicked
 .portfolioItemSmall {
     display: flex;
     gap: 10px;
+    background: inherit;
+    border: solid black 1px;
 }
 /* div holding the text items of an item when collapsed */
 .itemSmallText{
 
+}
+/* interactive button holding the portfolio item information when the item is expanded
+closes the expansion when clicked 
+*/
+.portfolioItemExpanded {
+    border: solid black 1px;
 }
 
