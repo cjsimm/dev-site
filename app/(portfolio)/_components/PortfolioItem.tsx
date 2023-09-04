@@ -23,6 +23,7 @@ export function PortfolioItemDefault(
         <div className={styles.portfolioItemContainer}>
             <button className={styles.portfolioItemSmall} onClick={handleClick}>
                 <Image
+                    className={styles.portfolioImageDefault}
                     src="/logo.svg"
                     alt="placeholder image"
                     width={200}

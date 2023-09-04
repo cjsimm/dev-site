@@ -37,10 +37,12 @@ expands the portfolio item when clicked
     margin: 10px;
     padding: 10px;
     height: 100%;
-
 }
-.itemSmallText {
-
+.portfolioImageDefault {
+    max-height: 50%;
+}
+.itemSmallText > h1 {
+    max-height: 50%;
 }
 
 /* interactive button holding the portfolio item information when the item is expanded
