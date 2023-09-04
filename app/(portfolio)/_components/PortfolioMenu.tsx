@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import PortfolioItem from "./PortfolioItem";
-import PortfolioItemExpanded from "./PortfolioItemExpanded";
+import { PortfolioItemDefault, PortfolioItemCollapsed, PortfolioItemExpanded } from "./PortfolioItem";
+/* import PortfolioItemExpanded from "./PortfolioItemExpanded"; */
 import styles from './components.module.css';
 import { JsxElement } from "typescript";
 
@@ -9,7 +9,7 @@ const data: portfolioItemData[] = [
     {   
         title: "Hello 1", 
         thumbnail: "placeholder", 
-        description: "this is a placeholder description 1"
+        description: "this is a placeholder this isthisthis is a placeholder this is a placeholder  is a placeholder  a placeholder description 1 this is a placeholder this is a placeholderthis is a placeholderthis is a placeholder this is a placeholder description 1 this is a placeholder description 1 this is a placeholder description 1 description 1 this is a placeholder description 1"
     },
     {   
         title: "Hello 2", 
@@ -25,6 +25,11 @@ const data: portfolioItemData[] = [
         title: "Hello 4", 
         thumbnail: "placeholder", 
         description: "this is a placeholder description 4"
+    },
+    {   
+        title: "Hello 5", 
+        thumbnail: "placeholder", 
+        description: "this is a placeholder description 4"
     }
 ]
 
@@ -37,54 +42,57 @@ export type portfolioItemData = {
     description: string
 }
 
-//redesign
-// if the clicked item matches the expanded item id, handle expandsets the state to  undefined  . in use effect, if the state is undefined, we draw the default set of portfolio items 
-// if the clicked item doesnt match the expanded item id, handle expandd sets the state of that new item id. in use effect, we draw the portfolio item thumbnails for all except the state and we draw that one as the expanded view
-
-// if state undefined, draw portfolio item standards
-// if state 
-    // if state == id draw big component
-    // else draw thumbnail component 
-
 export default function PortfolioMenu(): JSX.Element {
 
     const [expandedItemID, setExpandedItemID] = useState<string>();
-/*  const [expandedElement, setExpandedElement] = useState<JSX.Element>(); */
-/*     const [portfolioItems, setPortfolioItems] = useState<portfolioItemData[]>(data); */
 
     const handleExpand = (itemID: string): void => {
         setExpandedItemID(itemID === expandedItemID ? undefined : itemID);
     };
 
+    const sortExpanded = () => {
+        const itemArray: JSX.Element[] = [];
+        for (let i=0; i<data.length; i++) {
+            let item = data[i];
+            if (expandedItemID === item.title) {
+                expandedItem = (<PortfolioItemExpanded
+                key={i}
+                itemID={item.title}
+                data={item}
+                onExpand={handleExpand}
+                />);
+            } else {
+                itemArray.push((
+                <PortfolioItemCollapsed
+                    key={i}
+                    data={item}
+                    itemID={item.title}
+                    onExpand={handleExpand}
+                />
+                ));
+            }
+        }
+        return itemArray;
+    };
     //still need to switch between thumbnail only view and default view 
-
-    // Split the data array into two separate arrays: expanded and collapsed items
-    const expandedItem = data.map((item,index) => (
-        expandedItemID === item.title ? (
-        <PortfolioItemExpanded
-            key={index}
-            itemID={item.title}
-            data={item}
-            onExpand={handleExpand}
-        />
-    ) : null
-    ));
-
-    const collapsedItems = data.map((item, index) => (
-        expandedItemID === item.title ? null : (
-        <PortfolioItem
-            key={index}
-            data={item}
-            itemID={item.title}
-            onExpand={handleExpand}
-        />
-        )
-    ));
+    let expandedItem: JSX.Element | undefined;
+    const collapsedItems: JSX.Element[] = !expandedItemID ? (
+        data.map((item, index) => {
+            return (
+                <PortfolioItemDefault
+                    key={index}
+                    data={item}
+                    itemID={item.title}
+                    onExpand={handleExpand}
+                />
+            ) 
+        }) 
+    ): sortExpanded();
 
     return (
         <div className={styles.portfolioMenuContainer}>
             {expandedItem}
-            <div className={styles.collapsedItemsContainer}>
+            <div className={expandedItem ? styles.collapsedItemsContainer : styles.defaultItemsContainer}>
                 {collapsedItems}
             </div>
         </div>
