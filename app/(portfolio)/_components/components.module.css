@@ -1,34 +1,46 @@
 .portfolioMenuContainer {
     border: solid black 1px;
-    margin: 10vh 10vw;
+    margin: 5vh 10vw;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    gap: 2vw;
+    gap: 5vh;
 }
-.collapsedItemsContainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 2vw;
-    border: solid black 1px;
-}
-/* this containers applies to both expanded and collapsed elements */
-.portfolioItemContainer {
-    width: 300px;
+
+/* classes related to default items (nothing expanded) */
+.defaultItemsContainer {
     display: flex;
     flex-direction: row; 
-/*     justify-content: center;
-    align-items: center; */
+    flex-wrap: wrap;
 }
-/* interactive button holding the portfolio item thumbnail and text div when collapsed
+
+.portfolioItemContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    max-height: 40vh;   
+}
+@media only screen and (min-width: 1000px) {
+    .portfolioItemContainer {min-width: 50%;}
+}
+/* interactive button holding the portfolio item thumbnail and text div when everything is collapsed
 expands the portfolio item when clicked
 */
 .portfolioItemSmall {
-    display: flex;
-    gap: 10px;
     background: inherit;
     border: solid black 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    margin: 10px;
+    padding: 10px;
+    height: 100%;
+
+}
+.itemSmallText {
+
 }
 
 /* interactive button holding the portfolio item information when the item is expanded
@@ -37,5 +49,13 @@ closes the expansion when clicked
 .expandedItemContainer {
     display: flex;
     flex-direction: column;
+    border: solid black 1px;
 }
 
+/* classes related to collapsed items (thumbnail only) */
+.collapsedItemsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: solid black 1px;
+}
