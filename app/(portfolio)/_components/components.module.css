@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    max-width: 1980px;
 }
 
 /* classes related to default items (nothing expanded) */
@@ -52,7 +53,7 @@ closes the expansion when clicked
 .expandedItemContainer {
     display: flex;
     flex-direction: column;
-    background-color: var(--off-white);
+    background-color: #ffffff;
     max-width: 1680px;
     margin: auto;
     margin-bottom: 2vh;
@@ -71,6 +72,14 @@ closes the expansion when clicked
     margin-top: 2vh;
     min-width: 20vw;
     min-height: 5vh;
+    background: none;
+    border: solid 1px black;
+}
+
+.expandedItemContainer > button:hover {
+    background-color: #940909;
+    color: #ffffff;
+
 }
 
 /* classes related to collapsed items (thumbnail only) */
@@ -82,9 +91,11 @@ closes the expansion when clicked
     flex-wrap: wrap;
     border: solid black 1px;
     justify-content: center;
+    background: #ffffff;
 }
 /* portfolio items that exist as thumbnails below an expanded item */
 .portfolioItemThumbnail {
     padding: 0;
     border: 0;
+    background: #ffffff;
 }
