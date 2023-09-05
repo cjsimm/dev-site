@@ -1,4 +1,4 @@
-import { portfolioItemData } from "./PortfolioMenu";
+import { portfolioItemData } from "../portfolio.types";
 import styles from "./components.module.css";
 
 

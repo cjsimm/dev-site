@@ -1,9 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import { PortfolioItemDefault, PortfolioItemCollapsed, PortfolioItemExpanded } from "./PortfolioItem";
-/* import PortfolioItemExpanded from "./PortfolioItemExpanded"; */
+import { portfolioItemData } from "../portfolio.types";
 import styles from './components.module.css';
-import { JsxElement } from "typescript";
 
 const data: portfolioItemData[] = [
     {   
@@ -36,13 +35,15 @@ const data: portfolioItemData[] = [
 
 //holds the list of portfolio items
 //holds state of which portfolio items are expanded 
-export type portfolioItemData = {
+/* export type portfolioItemData = {
     title: string,
     thumbnail: string,
     description: string
 }
+ */
 
-export default function PortfolioMenu(): JSX.Element {
+
+export default function PortfolioMenu({portfolioData}: {portfolioData: any}): JSX.Element {
 
     const [expandedItemID, setExpandedItemID] = useState<string>();
 
