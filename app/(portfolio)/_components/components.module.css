@@ -1,5 +1,5 @@
 .portfolioMenuContainer {
-    border: solid black 1px;
+/*     border: solid black 1px; */
 /*     margin: 5vh 10vw; */
     display: flex;
     flex-direction: column;
@@ -92,7 +92,7 @@ closes the expansion when clicked
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    border: solid black 1px;
+/*     border: solid black 1px; */
     justify-content: center;
     background: #ffffff;
 }
