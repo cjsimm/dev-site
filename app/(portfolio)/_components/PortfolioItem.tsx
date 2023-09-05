@@ -49,16 +49,17 @@ export function PortfolioItemCollapsed(
     }
 
     return (
-        <div className={styles.collapsedItemsContainer}>
-            <button className={styles.portfolioItemSmall} onClick={handleClick}>
+        <>
+            <button className={styles.portfolioItemThumbnail} onClick={handleClick}>
                 <Image
                     src="/logo.svg"
                     alt="placeholder image"
-                    width={200}
-                    height={200}
+                    width={100}
+                    height={100}
+                    style={{display: 'block'}}
                 />
             </button>
-        </div>
+        </>
     );
 }
 
@@ -70,10 +71,13 @@ export function PortfolioItemExpanded(
         onExpand(itemID);
     } 
     return (
-        <div className={styles.expandedItemContainer}> 
+        <button className={styles.expandedItemContainer} onClick={handleClick}> 
             <h1>{data.title}</h1>
+            <section className="summary">
+                
+            </section>
             <p>{data.description}</p>
-            <button onClick={handleClick}>Close</button>
-        </div> 
+            <button onClick={handleClick}>View</button>
+        </button> 
     )
 }

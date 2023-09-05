@@ -21,7 +21,7 @@
   color: var(--text-color);
 }
 html {
-/*   max-width: var(--max-width); */
+  max-width: var(--max-width);
   width: 100%;
   line-height: 1.15;
   margin: 0;
