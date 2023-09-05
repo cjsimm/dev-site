@@ -54,8 +54,8 @@ export function PortfolioItemCollapsed(
                 <Image
                     src="/logo.svg"
                     alt="placeholder image"
-                    width={100}
-                    height={100}
+                    width={125}
+                    height={125}
                     style={{display: 'block'}}
                 />
             </button>
@@ -74,7 +74,7 @@ export function PortfolioItemExpanded(
         <button className={styles.expandedItemContainer} onClick={handleClick}> 
             <h1>{data.title}</h1>
             <section className="summary">
-                
+
             </section>
             <p>{data.description}</p>
             <button onClick={handleClick}>View</button>
