@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from './components.module.css';
 import Image from "next/image";
-import { portfolioItemData } from "./PortfolioMenu";
+import { portfolioItemData } from "../portfolio.types";
 
 
 type portfolioItemProps = {
@@ -16,7 +16,7 @@ export function PortfolioItemDefault(
     ): JSX.Element {
 
     const handleClick = () => {
-        console.log("item clicked", itemID);
+        /* console.log("item clicked", itemID); */
         onExpand(itemID);
     }
     return (
@@ -24,7 +24,7 @@ export function PortfolioItemDefault(
             <button className={styles.portfolioItemSmall} onClick={handleClick}>
                 <Image
                     className={styles.portfolioImageDefault}
-                    src="/logo.svg"
+                    src={data.thumbnail}
                     alt="placeholder image"
                     width={200}
                     height={200}
@@ -44,7 +44,7 @@ export function PortfolioItemCollapsed(
     ): JSX.Element {
 
     const handleClick = () => {
-        console.log("item clicked", itemID);
+        /* console.log("item clicked", itemID); */
         onExpand(itemID);
     }
 
@@ -52,7 +52,7 @@ export function PortfolioItemCollapsed(
         <>
             <button className={styles.portfolioItemThumbnail} onClick={handleClick}>
                 <Image
-                    src="/logo.svg"
+                    src={data.thumbnail}
                     alt="placeholder image"
                     width={125}
                     height={125}
@@ -74,8 +74,7 @@ export function PortfolioItemExpanded(
         <div className={styles.expandedItemContainer}> 
             <section className={styles.expandedItemContentWrapper}>
                 <h1>{data.title}</h1>
-                <p>{data.description}</p>
-                <p>{data.expandedContent}</p>
+                <div dangerouslySetInnerHTML={{__html: data.expandedContent}} />
             </section>
             <div className={styles.expandedItemButtons}>
                 <button>View</button>

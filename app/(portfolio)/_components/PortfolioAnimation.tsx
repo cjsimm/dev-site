@@ -2,8 +2,9 @@
 import styles from './components.module.css';
 import PortfolioMenu from './PortfolioMenu';
 import { useEffect, useState } from 'react';
+import { portfolioItemData } from '../portfolio.types';
 
-export default function PortfolioAnimation({ portfolioData }: {portfolioData: any}) {
+export default function PortfolioAnimation({ portfolioData }: {portfolioData: portfolioItemData[]}) {
 
     const [shouldAnimate, setAnimate] = useState(true)
 
