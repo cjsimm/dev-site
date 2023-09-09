@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { PortfolioItemDefault, PortfolioItemCollapsed, PortfolioItemExpanded } from "./PortfolioItem";
 import { portfolioItemData } from "../portfolio.types";
+import PortfolioAnimation from "./PortfolioAnimation";
 import styles from './components.module.css';
 
 const data: portfolioItemData[] = [
@@ -32,25 +33,17 @@ const data: portfolioItemData[] = [
     }
 ]
 
-
-//holds the list of portfolio items
-//holds state of which portfolio items are expanded 
-/* export type portfolioItemData = {
-    title: string,
-    thumbnail: string,
-    description: string
-}
- */
-
-
-export default function PortfolioMenu({portfolioData}: {portfolioData: any}): JSX.Element {
+export default function PortfolioMenu({portfolioData, triggerAnimation}: {portfolioData: any, triggerAnimation: any}): JSX.Element {
 
     const [expandedItemID, setExpandedItemID] = useState<string>();
 
-    const handleExpand = (itemID: string): void => {
+    const handleExpand = (itemID: string): void => {    
+        triggerAnimation(); 
         setExpandedItemID(itemID === expandedItemID ? undefined : itemID);
     };
 
+    //if expandedItemID !undefined, assign expandeditem variable 
+    //and place rest of portfolio items into collapsed components
     const sortExpanded = () => {
         const itemArray: JSX.Element[] = [];
         for (let i=0; i<data.length; i++) {
@@ -75,7 +68,8 @@ export default function PortfolioMenu({portfolioData}: {portfolioData: any}): JS
         }
         return itemArray;
     };
-    //still need to switch between thumbnail only view and default view 
+    //if expanded item id is undefined, create default portfolio view,
+    // else run sortexpanded() 
     let expandedItem: JSX.Element | undefined;
     const collapsedItems: JSX.Element[] = !expandedItemID ? (
         data.map((item, index) => {
@@ -90,12 +84,14 @@ export default function PortfolioMenu({portfolioData}: {portfolioData: any}): JS
         }) 
     ): sortExpanded();
 
+    console.log("portfolio menu is rerendering");
+
     return (
-        <div className={styles.portfolioMenuContainer}>
+        <>
             {expandedItem}
             <div className={expandedItem ? styles.collapsedItemsContainer : styles.defaultItemsContainer}>
                 {collapsedItems}
             </div>
-        </div>
+        </>
     );
 }

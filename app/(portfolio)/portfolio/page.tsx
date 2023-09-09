@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import styles from './page.module.css';
 import PortfolioMenu from "../_components/PortfolioMenu";
+import PortfolioAnimation from "../_components/PortfolioAnimation";
 import { portfolioItemData } from "../portfolio.types"
 
 export const metadata: Metadata = {
@@ -22,7 +23,7 @@ export default async function Portfolio() {
 
     return (
         <div className={styles.contentContainer}>
-          <PortfolioMenu portfolioData={portfolioData}/>
+          <PortfolioAnimation portfolioData={portfolioData} />
         </div>
     )
 }

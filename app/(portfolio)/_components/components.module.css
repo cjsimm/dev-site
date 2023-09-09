@@ -5,6 +5,8 @@
     flex-direction: column;
     flex-wrap: wrap;
     max-width: 1980px;
+    border: solid 1px black;
+    opacity: 1;
 }
 
 /* classes related to default items (nothing expanded) */
@@ -58,28 +60,43 @@ closes the expansion when clicked
     flex-direction: column;
     background-color: #ffffff;
     max-width: 1680px;
-    margin: auto;
-    margin-bottom: 2vh;
+    min-height: 55vh;
+/*     margin: auto; */
+/*     margin-bottom: 2vh; */
     border: solid black 1px;
-    padding: 0 1vw;
+    align-items: center;
+}
+
+.expandedItemContentWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 10px;
+    border: solid 1px black;
+    min-height: 45vh;
 }
 
 /* item title */
-.expandedItemContainer > h1 {
-    
+.expandedItemContentWrapper > h1 {
+  margin: 10px auto;  
 }
 
 /* click-through button */
-.expandedItemContainer > button {
-    margin: auto;
-    margin-top: 2vh;
+.expandedItemButtons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.expandedItemButtons > button {
     min-width: 20vw;
     min-height: 5vh;
     background: none;
     border: solid 1px black;
 }
 
-.expandedItemContainer > button:hover {
+.expandedItemButtons > button:hover {
     background-color: #940909;
     color: #ffffff;
 
@@ -101,4 +118,37 @@ closes the expansion when clicked
     padding: 0;
     border: 0;
     background: #ffffff;
+}
+
+/* utility classes for portfolio items */
+
+/* portfolio item fade in/out animations */
+.mounted {
+    opacity: 1;
+    animation: fadeIn 1s ease-in;
+}
+.unmounted {
+    opacity: 0;
+    animation: fadeOut 3s ease-in;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+  
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }

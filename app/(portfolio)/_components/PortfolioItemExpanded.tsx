@@ -6,7 +6,7 @@ import styles from "./components.module.css";
 //portfoliomenucontainer will be thumbnails 
 
 //need to add button and click event handler here 
-export default function PortfolioItemExpanded({data, itemID, onExpand}: {
+/* export default function PortfolioItemExpanded({data, itemID, onExpand}: {
     data: portfolioItemData, 
     itemID: string,
     onExpand: (itemID: string) => void,
@@ -22,4 +22,4 @@ export default function PortfolioItemExpanded({data, itemID, onExpand}: {
             <button onClick={handleClick}>Close</button>
         </div> 
     )
-}
+} */

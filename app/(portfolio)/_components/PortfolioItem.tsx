@@ -71,13 +71,16 @@ export function PortfolioItemExpanded(
         onExpand(itemID);
     } 
     return (
-        <button className={styles.expandedItemContainer} onClick={handleClick}> 
-            <h1>{data.title}</h1>
-            <section className="summary">
-
+        <div className={styles.expandedItemContainer}> 
+            <section className={styles.expandedItemContentWrapper}>
+                <h1>{data.title}</h1>
+                <p>{data.description}</p>
+                <p>{data.expandedContent}</p>
             </section>
-            <p>{data.description}</p>
-            <button onClick={handleClick}>View</button>
-        </button> 
+            <div className={styles.expandedItemButtons}>
+                <button>View</button>
+                <button onClick={handleClick}>Close</button>
+            </div>
+        </div> 
     )
 }
