@@ -3,6 +3,7 @@
         "id": "birds",
         "title": "birds",
         "description": "A ThreeJS App ",
+        "tags" : ["javascript","web","3d","graphics","threejs"],
         "href": "/birds",
         "hrefInternal": true
     },
@@ -11,6 +12,7 @@
         "id":"airflow",
         "title": "EC2 Airflow",
         "description": "A terraform module to quickly spin up an airflow installation in AWS",
+        "tags" : ["python","data","devops","terraform"],
         "href": "https://github.com/cjsimm/aws-ec2-airflow",
         "hrefInternal": false
     }

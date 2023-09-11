@@ -74,7 +74,12 @@ export function PortfolioItemExpanded(
         <div className={styles.expandedItemContainer}> 
             <section className={styles.expandedItemContentWrapper}>
                 <h1>{data.title}</h1>
-                <div dangerouslySetInnerHTML={{__html: data.expandedContent}} />
+                <ul className={styles.tagList}>
+                    {data.tags.map((tag) => {
+                        return <li className={styles.tagListItem} key={tag}>{tag}</li>
+                    })}
+                </ul>
+                <div className={styles.expandedContent} dangerouslySetInnerHTML={{__html: data.expandedContent}} />
             </section>
             <div className={styles.expandedItemButtons}>
                 <button>View</button>

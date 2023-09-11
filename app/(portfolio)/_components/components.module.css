@@ -5,7 +5,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     max-width: 1980px;
-    border: solid 1px black;
+/*     border: solid 1px black; */
     opacity: 1;
 }
 
@@ -43,9 +43,9 @@ expands the portfolio item when clicked
     padding: 10px;
     height: 100%;
 }
-.portfolioImageDefault {
-    max-height: 50%;
-}
+/* .portfolioImageDefault {
+
+} */
 .itemSmallText > h1 {
     max-height: 50%;
 }
@@ -73,12 +73,35 @@ closes the expansion when clicked
     margin: 15px 10px;
     border: solid 1px black;
     min-height: 45vh;
+    width: 95%;
 }
 
 /* item title */
 .expandedItemContentWrapper > h1 {
   margin: 10px auto;  
 }
+
+/* tag list */
+.tagList {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.tagListItem::before {
+    content: ", ";
+}
+
+.tagListItem:first-child::before {
+    content: none; /* Remove the comma before the first item */
+}
+
+.expandedContent {
+    margin-top: 10px;
+}
+
 
 /* click-through button */
 .expandedItemButtons {
