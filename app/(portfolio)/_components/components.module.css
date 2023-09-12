@@ -117,12 +117,20 @@ closes the expansion when clicked
     min-height: 5vh;
     background: none;
     border: solid 1px black;
+    transition: scale 0.3s;
 }
 
 .expandedItemButtons > button:hover {
     background-color: #940909;
     color: #ffffff;
+    scale: 1.1;
+    transition: scale 0.3s;
 
+}
+
+.expandedItemLink {
+    text-decoration: none;
+    color: var(--text-color);
 }
 
 /* classes related to collapsed items (thumbnail only) */

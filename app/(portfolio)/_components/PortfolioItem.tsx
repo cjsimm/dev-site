@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from './components.module.css';
 import Image from "next/image";
+import Link from "next/link";
 import { portfolioItemData } from "../portfolio.types";
 
 
@@ -82,7 +83,7 @@ export function PortfolioItemExpanded(
                 <div className={styles.expandedContent} dangerouslySetInnerHTML={{__html: data.expandedContent}} />
             </section>
             <div className={styles.expandedItemButtons}>
-                <button>View</button>
+                <button><Link className={styles.expandedItemLink} href={data.href} target="_blank">View</Link></button>
                 <button onClick={handleClick}>Close</button>
             </div>
         </div> 
