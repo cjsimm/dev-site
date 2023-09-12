@@ -16,16 +16,28 @@ export function PortfolioItemDefault(
     {data, itemID, onExpand}: portfolioItemProps
     ): JSX.Element {
 
+    const [isHover, setIsHover] = useState(false);
+
     const handleClick = () => {
         /* console.log("item clicked", itemID); */
         onExpand(itemID);
     }
+
+    //debug
+/*     console.log("thumbnailanimate path", data.thumbnailAnimated);
+    console.log("thumbnail static path", data.thumbnail); */
+
     return (
         <div className={styles.portfolioItemContainer}>
-            <button className={styles.portfolioItemSmall} onClick={handleClick}>
+            <button className={styles.portfolioItemSmall} 
+            onMouseEnter={() => {setIsHover(true);}}
+            onMouseLeave={() => {setIsHover(false);}}
+            onTouchStart={() => {setIsHover(true);}}
+            onTouchEnd={() => {setIsHover(false);}}
+            onClick={handleClick}>
                 <Image
                     className={styles.portfolioImageDefault}
-                    src={data.thumbnail}
+                    src={isHover && data.thumbnailAnimated ? data.thumbnailAnimated : data.thumbnail}
                     alt="placeholder image"
                     width={200}
                     height={200}
@@ -44,6 +56,8 @@ export function PortfolioItemCollapsed(
     {data, itemID, onExpand}: portfolioItemProps
     ): JSX.Element {
 
+    const [isHover, setIsHover] = useState(false);
+
     const handleClick = () => {
         /* console.log("item clicked", itemID); */
         onExpand(itemID);
@@ -51,9 +65,14 @@ export function PortfolioItemCollapsed(
 
     return (
         <>
-            <button className={styles.portfolioItemThumbnail} onClick={handleClick}>
+            <button className={styles.portfolioItemThumbnail} 
+                onMouseEnter={() => {setIsHover(true);}}
+                onMouseLeave={() => {setIsHover(false);}}
+                onTouchStart={() => {setIsHover(true);}}
+                onTouchEnd={() => {setIsHover(false);}}
+                onClick={handleClick}>
                 <Image
-                    src={data.thumbnail}
+                    src={isHover && data.thumbnailAnimated ? data.thumbnailAnimated : data.thumbnail}
                     alt="placeholder image"
                     width={125}
                     height={125}

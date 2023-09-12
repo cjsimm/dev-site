@@ -20,12 +20,22 @@ async function getPortfolioData(): Promise<portfolioItemData[]> {
   
   const portfolioContent = portfolioItems.map((item) => {
     //html file to set inner dangerously
+    const imagePath = `/portfolio-items/${item.id}/thumbnail`
     const thumbnail = `/portfolio-items/${item.id}/thumbnail.png`
+    let thumbnailAnimated;
+    //set the path to an animated gif, if it exists. else set null. used in
+    // && operator to load gif on mouseover/touch start
+    try {
+      fs.accessSync(path.join(process.cwd(),'/public', imagePath) + '.gif', fs.constants.R_OK);
+      thumbnailAnimated = imagePath + '.gif'
+    } catch (err) {
+      thumbnailAnimated = null;
+    }
     const expandedContent = fs.readFileSync(path.join(process.cwd(), `/public/portfolio-items/${item.id}/${item.id}.html`), 'utf8');
-    return {...item, thumbnail, expandedContent}
+    return {...item, thumbnail, thumbnailAnimated, expandedContent}
   });
 
-  console.log(process.cwd());
+/*   console.log(process.cwd()); */
 
 
   return portfolioContent; 
@@ -37,7 +47,7 @@ export default async function Portfolio() {
 
     const portfolioData = await getPortfolioData();
 
-    console.log(portfolioData);
+/*     console.log(portfolioData); */
 
     return (
         <div className={styles.contentContainer}>
