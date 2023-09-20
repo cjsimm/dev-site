@@ -1,11 +1,11 @@
 :root {
   --max-width: 1980px;
-  --grey: #efefef;
+  --grey: #b9b5b5;
   --green: #4ecbaa; 
   --red: #c24a66;
   --blue: #D7EAFF;
   --text-color: #000000;
-  --off-white: #f1f1f1;
+  --off-white: #f9f9f9;
   --header-height: 15vh;
   --header-margin: 5vh;
   --footer-height: 2vh;
@@ -17,7 +17,7 @@
   /* border: solid; */
   margin: 0;
   box-sizing: border-box;
-  background-color: var(--off-white);
+/*   background-color: var(--off-white); */
   color: var(--text-color);
 }
 html {

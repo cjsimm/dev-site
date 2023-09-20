@@ -34,7 +34,8 @@ expands the portfolio item when clicked
 */
 .portfolioItemSmall {
     background: inherit;
-    border: solid black 1px;
+    border: solid var(--off-white) 1px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,6 +43,14 @@ expands the portfolio item when clicked
     margin: 10px;
     padding: 10px;
     height: 100%;
+    transition: all 0.5s;
+}
+.portfolioItemSmallHover {
+    transition: box-shadow 0.5s, transform 0.5s; 
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.2);
+    transform: translateX(-1%) translateY(-1%);
+    background-color: #ffffff;
+    
 }
 /* .portfolioImageDefault {
 
@@ -63,7 +72,6 @@ closes the expansion when clicked
     min-height: 55vh;
 /*     margin: auto; */
 /*     margin-bottom: 2vh; */
-    border: solid black 1px;
     align-items: center;
 }
 
@@ -71,7 +79,7 @@ closes the expansion when clicked
     display: flex;
     flex-direction: column;
     margin: 15px 10px;
-    border: solid 1px black;
+/*     border: solid 1px black; */
     min-height: 45vh;
     width: 95%;
 }
@@ -113,7 +121,7 @@ closes the expansion when clicked
     margin-bottom: 10px;
 }
 .expandedItemButtons > button {
-    min-width: 20vw;
+    min-width: 100px;
     min-height: 5vh;
     background: none;
     border: solid 1px black;
@@ -123,7 +131,7 @@ closes the expansion when clicked
 .expandedItemButtons > button:hover {
     background-color: #940909;
     color: #ffffff;
-    scale: 1.1;
+    scale: 1.05;
     transition: scale 0.3s;
 
 }
@@ -143,6 +151,7 @@ closes the expansion when clicked
 /*     border: solid black 1px; */
     justify-content: center;
     background: #ffffff;
+    margin-top: 5vh;
 }
 /* portfolio items that exist as thumbnails below an expanded item */
 .portfolioItemThumbnail {
@@ -182,4 +191,11 @@ closes the expansion when clicked
     100% {
         opacity: 0;
     }
+}
+
+/* focused portfolio item utility clases */
+.portfolioItemFocused {
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px -1px rgba(0,0,0,.2);
 }

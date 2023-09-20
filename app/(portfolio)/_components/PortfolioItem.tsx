@@ -29,7 +29,7 @@ export function PortfolioItemDefault(
 
     return (
         <div className={styles.portfolioItemContainer}>
-            <button className={styles.portfolioItemSmall} 
+            <button className={`${styles.portfolioItemSmall} ${isHover && styles.portfolioItemSmallHover}`} 
             onMouseEnter={() => {setIsHover(true);}}
             onMouseLeave={() => {setIsHover(false);}}
             onTouchStart={() => {setIsHover(true);}}
@@ -91,7 +91,7 @@ export function PortfolioItemExpanded(
         onExpand(itemID);
     } 
     return (
-        <div className={styles.expandedItemContainer}> 
+        <div className={`${styles.expandedItemContainer} ${styles.portfolioItemFocused}`}> 
             <section className={styles.expandedItemContentWrapper}>
                 <h1>{data.title}</h1>
                 <ul className={styles.tagList}>

@@ -5,34 +5,6 @@ import { portfolioItemData } from "../portfolio.types";
 import PortfolioAnimation from "./PortfolioAnimation";
 import styles from './components.module.css';
 
-/* const data: portfolioItemData[] = [
-    {   
-        title: "Hello 1", 
-        thumbnail: "placeholder", 
-        description: "this is a placeholderthis is a placeholder this isthisthis is a placeholder this isthisthis is a placeholder this isthisthis is a placeholder this isthisthis is a placeholder this isthisthis is a placeholder this isthisthis is a placeholder this isthisthis is a placeholder this isthisthis is a placeholder this isthisthis is a placeholder this isthisthis is a placeholder this isthisthis is a placeholder this isthisthis is a placeholder this isthisthis is a placeholder this isthis this isthisthis is a placeholder this is a placeholder  is a placeholder  a placeholder description 1 this is a placeholder this is a placeholderthis is a placeholderthis is a placeholder this is a placeholder description 1 this is a placeholder description 1 this is a placeholder description 1 description 1 this is a placeholder description 1"
-    },
-    {   
-        title: "Hello 2", 
-        thumbnail: "placeholder", 
-        description: "this is a placeholder description 2"
-    },
-    {   
-        title: "Hello 3", 
-        thumbnail: "placeholder", 
-        description: "this is a placeholder description 3 "
-    },
-    {   
-        title: "Hello 4", 
-        thumbnail: "placeholder", 
-        description: "this is a placeholder description 4"
-    },
-    {   
-        title: "Hello 5", 
-        thumbnail: "placeholder", 
-        description: "this is a placeholder description 4"
-    }
-] */
-
 export default function PortfolioMenu({portfolioData, triggerAnimation}: {portfolioData: portfolioItemData[], triggerAnimation: () => void}): JSX.Element {
 
     const [expandedItemID, setExpandedItemID] = useState<string>();
