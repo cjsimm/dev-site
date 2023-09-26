@@ -155,7 +155,7 @@ main {
   align-items: center;
 }
 .sectionContent p {
-  text-align: left;
+  text-align: center;
 }
 .largeButton {
   transition: transform 0.3s;
