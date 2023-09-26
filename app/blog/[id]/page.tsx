@@ -25,16 +25,16 @@ export default async function Post({ params }: { params: { id: string } }) {
     //retrieve post content to populate component
     const post = await getPost(params.id);
     return (
-        <>
-        <div className="sectionFillPage bgBlue">
-            <div className={styles.blogContainer}>
-                <div className={styles.blogHeader}>
-                    <h1>{post.title}</h1>
-                    <p>{post.date}</p>
+        <main>
+            <div className="sectionFillPage bgBlue">
+                <div className={styles.blogContainer}>
+                    <div className={styles.blogHeader}>
+                        <h1>{post.title}</h1>
+                        <p>{post.date}</p>
+                    </div>
+                    <div className={styles.postContent} dangerouslySetInnerHTML={{ __html: post.text}} />
                 </div>
-                <div className={styles.postContent} dangerouslySetInnerHTML={{ __html: post.text}} />
             </div>
-       </div>
-       </>
+       </main>
     )
 }
