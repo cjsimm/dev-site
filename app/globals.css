@@ -5,7 +5,7 @@
   --red: #c24a66;
   --blue: #D7EAFF;
   --off-white: #f1f1f1;
-  --header-height: 15vh;
+  --header-height: 100px;
   --header-margin: 5vh;
   --footer-height: 2vh;
   --site-wMargin: 0vw;
@@ -46,10 +46,7 @@ body {
   background-color: var(--off-white);
   width: 100%;
   max-width: var(--max-width);
-  padding-top: 10px;
-  padding-bottom: 10px;
-  height: var(--header-height);
-  min-height: 100px;
+  min-height: var(--header-height);
 }
 .logo-container {
   margin-left: 1%;
@@ -60,7 +57,6 @@ body {
 .logo {
   max-width: 20vw;
   width: 7vw;
-  max-height: var(--header-height);
   display: block;
 }
 .navbar-above { 
