@@ -60,9 +60,6 @@ export default function RootLayout({
           </header>
         </div>
         {children}
-        {/* <footer className="siteFooter">
-          <p>Copyright BlahBlah</p>
-        </footer> */}
       </body>
     </html>
   )

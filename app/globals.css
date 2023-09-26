@@ -5,7 +5,7 @@
   --red: #c24a66;
   --blue: #D7EAFF;
   --off-white: #f1f1f1;
-  --header-height: 100px;
+  --header-height: 110px;
   --header-margin: 5vh;
   --footer-height: 2vh;
   --site-wMargin: 0vw;
@@ -46,7 +46,7 @@ body {
   background-color: var(--off-white);
   width: 100%;
   max-width: var(--max-width);
-  min-height: var(--header-height);
+  height: var(--header-height);
 }
 .logo-container {
   margin-left: 1%;
@@ -56,7 +56,7 @@ body {
 }
 .logo {
   max-width: 20vw;
-  width: 7vw;
+  width: 100px;
   display: block;
 }
 .navbar-above { 
@@ -123,11 +123,11 @@ body {
 }
 main {
   width: 100%;
-  margin-top: var(--header-height);
+  margin-top: calc(var(--header-height) + 2%);
 }
 /* Section Styling */
 .sectionBlock {
-  min-height: 40vh;
+  min-height: 20vh;
   width: 100%;
 }
 .sectionContent {
@@ -157,9 +157,7 @@ main {
   color: inherit;
 }
 .sectionFillPage {
-  min-height: calc(100vh - var(--header-height));
   width: 100%;
-  margin-top: var(--header-height);
 }
 /* Buttons */
 /* grey section styles */
