@@ -4,7 +4,7 @@
   --green: #4ecbaa; 
   --red: #c24a66;
   --blue: #D7EAFF;
-  --off-white: #f1f1f1;
+  --off-white: #f9f9f9;
   --header-height: 110px;
   --header-margin: 5vh;
   --footer-height: 2vh;
@@ -30,10 +30,10 @@ body {
 /*   display: flex;
   flex-direction: column; */
 }
-/* header and navbar */
-.header-container {
-
+svg {
+  display: block;
 }
+/* header and navbar */
 .site-header {
   position: fixed;
   left: 0;
@@ -42,7 +42,7 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-bottom: solid rgba(0, 0, 0, 0.603);
+  border-bottom: solid rgb(0, 0, 0);
   background-color: var(--off-white);
   width: 100%;
   max-width: var(--max-width);
@@ -112,11 +112,11 @@ body {
 /*   border: solid 1px black; */
 }
 .social-container > li {
-  border: solid black 1px;
 }
 .social-container > li > .social-link {
   text-decoration: none;
 /*   padding: 10px; */
+  display: block;
   list-style-type: none;
   color: inherit;
 /*   border: solid 1px black; */
