@@ -59,8 +59,6 @@ svg {
   width: 100px;
   display: block;
 }
-.navbar-above { 
-}
 .navbar-container {
   /* border-top: solid 1px #2C2C2C; */
   list-style: none;
@@ -109,9 +107,6 @@ svg {
   margin-right: 3%;
   margin-left: auto;
   padding: 0;
-/*   border: solid 1px black; */
-}
-.social-container > li {
 }
 .social-container > li > .social-link {
   text-decoration: none;
