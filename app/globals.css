@@ -11,6 +11,7 @@
   --site-wMargin: 0vw;
   box-sizing: border-box;
   font-size: 20px;
+
 }
 * {
   /* border: solid; */
@@ -21,6 +22,7 @@
 html {
 /*   max-width: var(--max-width); */
   width: 100%;
+  max-width: var(--max-width);
   line-height: 1.15;
 }
 body {
@@ -45,6 +47,7 @@ body {
   top: 0;
   background-color: var(--off-white);
   width: 100%;
+  max-width: var(--max-width);
   padding-top: 10px;
   padding-bottom: 10px;
   height: var(--header-height);
