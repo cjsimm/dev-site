@@ -33,6 +33,14 @@ body {
 svg {
   display: block;
 }
+/* remove list defaults */
+ul {
+    padding: 0;
+}
+li {
+  text-decoration: none;
+  list-style-type: none;
+}
 /* header and navbar */
 .site-header {
   position: fixed;
@@ -121,7 +129,31 @@ svg {
 }
 /* hamburger menu for mobile and narrow screens */
 .hamburger-container {
-  display: none;
+    display: flex;
+    flex-direction: column;
+}
+.hamburger-button {
+    display: none;
+    justify-content: center;
+    margin: 0 1rem 0 0;
+    border: 1px solid #000;
+    z-index: 10;
+}
+.mobile-nav { 
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.mobile-nav > ul{
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    margin-top: 20vh;
+    justify-content: center;
+    align-items: center;
 }
 /* hide navbar and social icons when width too small */
 @media screen and (max-width: 900px) {
@@ -131,11 +163,13 @@ svg {
   .social-container {
     display: none;
   }
-  .hamburger-container {
+  .hamburger-button {
     display: block;
   }
+  .mobile-nav { 
+    display: inline;
+  }
 }
-/*   border: solid 1px black; */
 
 main {
   width: 100%;
