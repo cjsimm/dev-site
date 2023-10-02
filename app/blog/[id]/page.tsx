@@ -1,6 +1,5 @@
-import { getPostIDs, getPost, getPostMetadata } from "@/app/_lib/blogPosts";
+import { getPostIDs, getPost } from "@/app/_lib/blogPosts";
 import styles from './page.module.css';
-import { Metadata } from "next";
 export const dynamic = 'force-static';
 export const dynamicParams = false;
 
