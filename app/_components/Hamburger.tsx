@@ -17,10 +17,10 @@ export default function Hamburger() {
             {isOpen &&  
                 <nav className="mobile-nav">
                     <ul>
-                        <li><Link href="/">Home</Link></li>
-                        <li><Link href="/blog">Blog</Link></li>
-                        <li><Link href="/">Portfolio</Link></li>
-                        <li><Link href="/contact">Contact</Link></li>
+                        <li><Link href="/" onClick={() => setOpen(false)}>Home</Link></li>
+                        <li><Link href="/blog" onClick={() => setOpen(false)}>Blog</Link></li>
+                        <li><Link href="/" onClick={() => setOpen(false)}>Portfolio</Link></li>
+                        <li><Link href="/contact" onClick={() => setOpen(false)}>Contact</Link></li>
                     </ul>
                 </nav>
             } 
