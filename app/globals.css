@@ -136,8 +136,32 @@ li {
     display: none;
     justify-content: center;
     margin: 0 1rem 0 0;
-    border: 1px solid #000;
     z-index: 2;
+}
+.hamburger-line {
+    width: 50px;
+    height: 5px;
+    background-color: #000000;
+    display: block;
+    margin: 8px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.hamburger-expanded .hamburger-line:nth-child(1) {
+    -webkit-transform: translateY(13px) rotate(45deg);
+    -ms-transform: translateY(13px) rotate(45deg);
+    -o-transform: translateY(13px) rotate(45deg);
+    transform: translateY(13px) rotate(45deg);
+}
+.hamburger-expanded .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-expanded .hamburger-line:nth-child(3) {
+    -webkit-transform: translateY(-13px) rotate(-45deg);
+    -ms-transform: translateY(-13px) rotate(-45deg);
+    -o-transform: translateY(-13px) rotate(-45deg);
+    transform: translateY(-13px) rotate(-45deg); 
 }
 .mobile-nav { 
     display: none;

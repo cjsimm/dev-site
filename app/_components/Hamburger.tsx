@@ -9,11 +9,13 @@ export default function Hamburger() {
     //nothing
     return(
         <>
-            <button className="hamburger-button" onClick={() => setOpen(!isOpen)}>
-                <div className="hamburger-logo">
-                    placeholder
+            <span className="hamburger-button" onClick={() => setOpen(!isOpen)}>
+                <div className={`hamburger-logo ${isOpen && 'hamburger-expanded'}`}>
+                    <span className="hamburger-line" />
+                    <span className="hamburger-line" />
+                    <span className="hamburger-line" />
                 </div>
-            </button>
+            </span>
             {isOpen &&  
                 <nav className="mobile-nav">
                     <ul>
