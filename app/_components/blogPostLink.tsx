@@ -3,7 +3,7 @@ import { blogPostMetadata } from "../_lib/blogPosts";
 
 export default function BlogPostLink( { data }: { data: blogPostMetadata } ) {
     return (
-        <Link className="blogPostLink" href={`/blog/${data.id}`}>
+        <a className="blogPostLink" href={`/blog/${data.id}`}>
             <div className="blogTitle">
                 <p>{data.date}</p>
                 <p>-</p>
@@ -11,6 +11,6 @@ export default function BlogPostLink( { data }: { data: blogPostMetadata } ) {
             </div>
             <p>{data.summary}</p>
             <p>{"Read More ->"}</p>
-        </Link>
+        </a>
     )
 }

@@ -137,15 +137,16 @@ li {
     justify-content: center;
     margin: 0 1rem 0 0;
     border: 1px solid #000;
-    z-index: 10;
+    z-index: 2;
 }
 .mobile-nav { 
     display: none;
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 0;
     width: 100vw;
     height: 100vh;
+    z-index: 1;
 }
 .mobile-nav > ul{
     display: flex;
@@ -271,12 +272,12 @@ main {
 /* Blogpost Styling */
 .blogPostLink {
   display: flex;
+  
   flex-direction: column;
   gap: 1vh;
   border: solid #ffffff;
   padding: 2vh 2vw;
-  transform: scale(1);
-  transition: transform 0.75s;
+  transition: transform 0.75s; 
   text-decoration: none;
   color: black;
 }
