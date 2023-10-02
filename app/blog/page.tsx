@@ -1,6 +1,5 @@
-import { blogPostMetadata, getPostMetadata, sortPosts } from "../_lib/blogPosts";
+import { getPostMetadata, sortPosts } from "../_lib/blogPosts";
 import BlogPostLink from "../_components/blogPostLink";
-import Link from "next/link";
 import { Metadata } from "next";
 
 const page = 'Blog';

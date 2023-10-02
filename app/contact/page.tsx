@@ -1,4 +1,3 @@
-import styles from './page.module.css';
 import type { Metadata } from 'next';
 import ContactForm from '../_components/ContactForm';
 

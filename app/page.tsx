@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import styles from './page.module.css';
 import Link from '@/node_modules/next/link';
 import type { Metadata } from 'next';
 import BlogPostLink from './_components/blogPostLink';
