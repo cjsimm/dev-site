@@ -1,9 +1,8 @@
 import './globals.css'
-import Image from '@/node_modules/next/image';
 import Link from '@/node_modules/next/link';
 import type { Metadata } from 'next';
 import { Noto_Sans_Mono } from 'next/font/google';
-import Hamburger from './_components/Hamburger'
+import Hamburger from './_components/Hamburger';
 const noto_mono = Noto_Sans_Mono({
   subsets: ['latin'],
   display: 'swap',
