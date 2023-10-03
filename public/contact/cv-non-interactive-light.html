@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christopher Simmons</title>
+    <!--<link rel="stylesheet" href="./style.css">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet"> 
+    <style>
+        :root {
+            --text-colour: rgba(241,241,241,1);
+            --header-bg-colour: #1b1c20; 
+            /* --bg-colour: #2c2d32; */
+            --bg-colour: #000000;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cutive Mono', monospace;
+            font-size: 16px;
+            line-height: 1;
+        }
+        a {
+            text-decoration: none;
+        }
+        p {
+            line-height: 1.2;
+            font-weight: 400;
+        }
+        body {
+            background: #ffffff;
+            max-width: 1000px;
+            color: var(--bg-colour);
+            padding: 20px;
+            margin: 3vh 3vw
+        }
+        li {
+            list-style-position: inside;
+            line-height: 1.5rem;
+            font-size: 1rem;
+        }
+        .header {
+            display: flex;
+            flex-direction: column;
+            gap: 3vh;
+            margin-top: 3vh;
+            font-size: 3rem;
+            border: solid;
+            border-color: var(--header-bg-colour);
+            max-width: 600px;
+            padding: 20px;
+        }
+        .header h1 {
+            font-size: inherit; /* Set the font size to inherit from the parent (.header) */
+        }
+        .social-icon {
+            fill: var(--bg-colour);
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: horizontal;
+            flex-wrap: wrap;
+            margin: 0;
+            margin-left: 1rem;
+            margin-top: 0.5vh;
+        }
+        .contact-info > li {
+            list-style: none;
+            margin-right: 3vw;
+            line-height: 1;
+        }
+        .main {
+            margin-top: 5vh;
+        }
+        section {
+            margin-top: 3vh;
+        }
+        /* Styling and transformations for interactive elements*/
+        .expandable-header {
+            display: flex;
+            margin-bottom: 3vh;
+            font-size: 2rem;
+            background-color: #ffffff;
+            color: var(--bg-colour);
+            border-style: solid;
+            border-color: var(--bg-colour);
+            padding: 0.5rem;
+            gap: 1vw;
+        }
+        .expandable-header > h1 {
+            font-size: 2rem;
+        }
+        .expandable-header-text {
+            margin-right: auto;
+        }
+        .expandable-element-subelement {
+            border: solid;
+            border-color: var(--header-bg-colour);
+            padding: 20px;
+            z-index: -1;
+        }
+        .toggleCheckbox {
+            display: none;
+        }
+        /* Checkbox toggle animations  */
+        .expandable-element {
+            display: none;
+            visibility: hidden;
+            opacity: 0;
+            top: 0;
+            left: 0;
+            position: absolute;
+            transition: opacity 0s, visibility 0s, top 0s;
+            
+        }
+        .expandable-header-arrow {
+            transition: transform 2s;
+        }
+        .expandable-header-decoration {
+            transition: opacity 0.5s 0.5s, transform 0.5s;
+        }
+        .toggleCheckbox:checked ~ label > .expandable-header-arrow {
+            transform: translateX(20px) rotate(90deg);
+            transition: transform 2s
+        }
+        .toggleCheckbox:checked ~ label > .expandable-header-decoration {
+            opacity: 0;
+            transform: translateX(100%);
+            transition: opacity 0.5s, transform 0.5s 0.5s;
+            
+        }
+        .toggleCheckbox:checked ~ .expandable-element {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            visibility: visible;
+            gap: 4vh;
+            margin-left: 4vw;
+            margin-right: 4vw;
+            opacity: 1;
+            transition: opacity 3s, visibility 0s 0s, top 0s;
+        }
+        /* toggling the checkbox needs to remove the skills list */
+        .toggleSkills:checked + label {
+            font-weight: bold;
+        }
+        .toggleSkills:checked ~ .expandable-element {
+            margin-top: 1.5vh;
+            gap: 2vh;
+        }
+        .big-text {
+            font-size: 1.2rem;
+            color: var(--bg-colour);
+        }
+        .skills-list {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        .skills-list > li {
+            margin-bottom: 2vh;
+            list-style-type: "> ";
+        }
+        .skills-list > li:hover {
+            font-weight: bold;
+            font-size: 1.05rem;
+        }
+        .education {
+            display: flex;
+            flex-direction: column;
+            gap: 2vh;
+        }
+        .degree-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5vh;
+        }
+        .degree-details > p {
+            font-size: 1.2rem;
+        }
+        .university {
+            font-style: italic;
+        }
+        .sub-header {
+            font-size: 1.2rem;
+        }
+        .work-experience {
+            display: flex;
+            flex-direction: column;
+            gap: 4vh;
+        }
+        .work-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5vh;
+        }
+        .work-details > p {
+            font-size: 1.2rem;
+        }
+        .list-header {
+            margin-top: 1vh;
+        }
+        .date {
+            font-style: italic;
+        }
+        b {
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Christopher J. Simmons</h1>
+        <ul class="contact-info">
+            <li><svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.7-8 5.334L4 8.7V6.297l8 5.333 8-5.333V8.7z"></path></svg></li>
+            <li><a href="https://www.github.com/cjsimm" target="_blank"><svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"></path></svg></a></li>
+            <li><a href="https://www.linkedin.com/in/christopher-john-simmons/" target="_blank"><svg class="social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8.339 18.337H5.667v-8.59h2.672v8.59zM7.003 8.574a1.548 1.548 0 1 1 0-3.096 1.548 1.548 0 0 1 0 3.096zm11.335 9.763h-2.669V14.16c0-.996-.018-2.277-1.388-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248h-2.667v-8.59h2.56v1.174h.037c.355-.675 1.227-1.387 2.524-1.387 2.704 0 3.203 1.778 3.203 4.092v4.71z"></path></svg></a></li>
+        </ul>
+    </header>
+    <article class="main">
+        <section>
+            <div class="expandable">
+                <input type="checkbox" class="toggleCheckbox" id="professionalCheckbox" checked>
+                <label for="professionalCheckbox" class="expandable-header">
+                        <h1 class="expandable-header-text">Professional Profile</h1>
+                        <h1 class="expandable-header-arrow">></h1>
+                        <h1 class="expandable-header-decoration"> ...</h1>
+                </label>
+                <div class="expandable-element">
+                    <p class="expandable-element-subelement big-text">
+                        Multi-skilled IT professional with a background primarily in data engineering, analysis, and machine learning. Experienced with assuming ownership of, and delivering, end-to-end data engineering and data 
+                        modelling projects. 
+                        
+                        Drawing from both a STEM and humanities background, I am excellent at bridging the gap between
+                        technical and non technical stakeholders, distilling data into actionable insights that can positively
+                        impact a business.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="expandable">
+                <input type="checkbox" class="toggleCheckbox" id="skillsCheckbox" checked>
+                <label for="skillsCheckbox" class="expandable-header">
+                        <h1 class="expandable-header-text">Core Skills</h1>
+                        <h1 class="expandable-header-arrow">></h1>
+                        <h1 class="expandable-header-decoration"> ...</h1>
+                </label>
+                <div class="expandable-element">
+                    <ul class="skills-list">
+                        <li>
+                            <input type="checkbox" class="toggleCheckbox toggleSkills" id="dataCheckbox" checked>
+                            <label for="dataCheckbox">
+                                Data Engineering ...
+                            </label>
+                            <div class="expandable-element expandable-element-subelement">
+                                <p class="">
+                                    End-to-end data engineering.  Confident with complex ETL and ELT processes, incorporating software development best practices 
+                                    using tools such as DBT to maintain codebase organization and improve data integrity. Extensive experience with helping businesses visualize,
+                                     analyze, and engage with their data and interfacing with 3rd party APIs to maximize utilization.
+                                </p>
+                                <p><b>Tools/Libraries: </b> Python, Typescript, SQL, Neo4j, DBT, ApacheSpark, ApacheAirflow, MongoDB, Firestore, LookML, various marketing APIs</p>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="toggleCheckbox toggleSkills" id="mlCheckbox" checked>
+                            <label for="mlCheckbox">
+                                Machine Learning ...
+                            </label>
+                            <div class="expandable-element expandable-element-subelement">
+                                <p>
+                                    Full stack machine learning engineering. Experience with a range of models of varying complexity, from traditional statistical models to complex neural networks. 
+                                    Experience with forecasting, customer behaviour prediction, recommendation systems, generative AI/prompt engineering. Experienced with MLOps to manage and automate model 
+                                    retraining/deployment.
+                                </p>
+                                <p><b>Tools/Libraries: </b>PyTorch, TensorFlow, scikit-learn, Pandas, numpy, Flask, FastAPI</p>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="toggleCheckbox toggleSkills" id="webCheckbox" checked>
+                            <label for="webCheckbox">
+                                Web Development ...
+                            </label>
+                            <div class="expandable-element expandable-element-subelement">
+                                <p>
+                                    Experienced with the development of traditional websites and web apps using various stacks and tool combinations. 
+                                    Knowledgeable regarding best practice for onsite analytics solutions.
+                                </p>
+                                <p><b>Tools/Libraries: </b>Flask, NodeJS, React/Next, GoogleTagManager</p>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="toggleCheckbox toggleSkills" id="cloudCheckbox" checked>
+                            <label for="cloudCheckbox">
+                                Cloud/Linux/DevOps ...
+                            </label>
+                            <div class="expandable-element expandable-element-subelement">
+                                <p>
+                                    Handy with a range of products on both the GCP and AWS platforms. Confident with CI/CD workflows. 
+                                    Long-time Linux user, able to administer, troubleshoot, and debug.
+                                </p>
+                                <p><b>Tools/Libraries: </b>gcloud/AWS CLI, Docker, Git, Bash, Terraform, Ansible, GitLab</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="expandable">
+                <input type="checkbox" class="toggleCheckbox" id="educationCheckbox" checked>
+                <label for="educationCheckbox" class="expandable-header">
+                        <h1 class="expandable-header-text">Education</h1>
+                        <h1 class="expandable-header-arrow">></h1>
+                        <h1 class="expandable-header-decoration"> ...</h1>
+                </label>
+                <div class="expandable-element">
+                    <div class="expandable-element-subelement degree-details">
+                        <h2 class="sub-header">MSc Data Science and Business Analytics</h2>
+                        <p class="university">University of Plymouth</p>
+                        <p class="date">Dec 2021 <b>|</b> Distinction</p>
+                        <p>Thesis: <b>Towards Sustainable Irrigation Management: Forecasting Soil Moisture Content Using Machine Learning</b></p>
+                        <p>Studied and implemented various machine learning algorithms, working with datasets derived from multiple industries. Thesis research was focused on the implementation of neural network architectures</p>
+                    </div>
+                    <div class="expandable-element-subelement degree-details">
+                        <h2 class="sub-header">BA (Hons) History</h2>
+                        <p class="university">University of Plymouth</p>
+                        <p class="date">Sep 2017</p>
+                    </div> 
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="expandable">
+                <input type="checkbox" class="toggleCheckbox" id="experienceCheckbox" checked>
+                <label for="experienceCheckbox" class="expandable-header">
+                        <h1 class="expandable-header-text">Work Experience</h1>
+                        <h1 class="expandable-header-arrow">></h1>
+                        <h1 class="expandable-header-decoration"> ...</h1>
+                </label>
+                <div class="expandable-element">
+                    <div class="expandable-element-subelement work-details">
+                        <h2 class="sub-header">
+                            MandM Direct - Data Engineer <i>(Contract)</i>
+                        </h2>
+                        <p class="date">May 2023</p>
+                        <p>
+                            Contracted to implement a new marketing platform management system and design/deploy marketing spend optimization changes across the company's international markets
+                        </p>
+                        <h3 class="list-header">Key Projects</h3>
+                        <ul>
+                            <li>Developed, tested, and deployed an audience-based marketing platform management system that unified marketing strategy across GoogleAds, Meta Ads, and Tiktok</li>
+                            <li>Deployed previously developed remarketing optimizations across all of the business' markets, significantly improving marketing spend in advertising platforms</li>
+                        </ul>
+                    </div>
+                    <div class="expandable-element-subelement work-details">
+                        <h2 class="sub-header">
+                            MandM Direct - Data Scientist
+                        </h2>
+                        <p class="date">Nov 2021 - Jan 2023</p>
+                        <p>
+                            Data scientist at one of the UK’s largest fashion retailers.
+                        </p>
+                        <h3 class="list-header">Key Projects</h3>
+                        <ul>
+                            <li>Optimized customer remarketing data pipelines and unified marketing platform codebases for better maintainability</li>
+                            <li>Streamlined on-site data to create a session-driven customer behaviour data model</li>
+                            <li>Designed and implemented an in-house UUID system to improve on-site customer tracking for logged-out customers</li>
+                            <li>Collaborated with Google Data Scientists to develop a marketing mix model, aiming to better understand the effect of non-conversion marketing channels on revenue</li>
+                            <li>Developed and maintained data visualizations and dashboards as a Looker Developer</li>
+                            <li>Deployed forecasting models for the finance department to assist with budgeting</li>
+                            <li>Developed and deployed machine learning models relating to customer behaviour prediction and lifetime value</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </article>
+</body>
+</html>
