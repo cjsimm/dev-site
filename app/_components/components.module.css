@@ -1,0 +1,201 @@
+.portfolioMenuContainer {
+/*     border: solid black 1px; */
+/*     margin: 5vh 10vw; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 1980px;
+/*     border: solid 1px black; */
+    opacity: 1;
+}
+
+/* classes related to default items (nothing expanded) */
+.defaultItemsContainer {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+}
+
+.portfolioItemContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    max-height: 40vh;   
+}
+@media only screen and (min-width: 1000px) {
+    /* make portfolio item default view expand to 2 columns on wide devices */
+    .portfolioItemContainer {min-width: 50%;}
+    /* push the portfolio menu to the centre of the screen on wide devices */
+    .portfolioMenuContainer {margin: 5vh 10vw;}
+}
+/* interactive button holding the portfolio item thumbnail and text div when everything is collapsed
+expands the portfolio item when clicked
+*/
+.portfolioItemSmall {
+    background: inherit;
+    border: solid var(--off-white) 1px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    margin: 10px;
+    padding: 10px;
+    height: 100%;
+    transition: all 0.5s;
+}
+.portfolioItemSmallHover {
+    transition: box-shadow 0.5s, transform 0.5s; 
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.2);
+    transform: translateX(-1%) translateY(-1%);
+    background-color: #ffffff;
+    
+}
+/* .portfolioImageDefault {
+
+} */
+.itemSmallText > h1 {
+    max-height: 50%;
+}
+
+/* clases related to an expanded portfolio item */
+
+/* interactive button holding the portfolio item information when the item is expanded
+closes the expansion when clicked 
+*/
+.expandedItemContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    max-width: 1680px;
+    min-height: 55vh;
+/*     margin: auto; */
+/*     margin-bottom: 2vh; */
+    align-items: center;
+}
+
+.expandedItemContentWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 10px;
+/*     border: solid 1px black; */
+    min-height: 45vh;
+    width: 95%;
+}
+
+/* item title */
+.expandedItemContentWrapper > h1 {
+  margin: 10px auto;  
+}
+
+/* tag list */
+.tagList {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.tagListItem::before {
+    content: ", ";
+}
+
+.tagListItem:first-child::before {
+    content: none; /* Remove the comma before the first item */
+}
+
+.expandedContent {
+    margin-top: 10px;
+}
+
+
+/* click-through button */
+.expandedItemButtons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.expandedItemButtons > button {
+    min-width: 100px;
+    min-height: 5vh;
+    background: none;
+    border: solid 1px black;
+    transition: scale 0.3s;
+}
+
+.expandedItemButtons > button:hover {
+    background-color: #940909;
+    color: #ffffff;
+    scale: 1.05;
+    transition: scale 0.3s;
+
+}
+
+.expandedItemLink {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+/* classes related to collapsed items (thumbnail only) */
+
+/* container that holds thumbnails*/
+.collapsedItemsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+/*     border: solid black 1px; */
+    justify-content: center;
+    background: #ffffff;
+    margin-top: 5vh;
+}
+/* portfolio items that exist as thumbnails below an expanded item */
+.portfolioItemThumbnail {
+    padding: 0;
+    border: 0;
+    background: #ffffff;
+}
+
+/* utility classes for portfolio items */
+
+/* portfolio item fade in/out animations */
+.mounted {
+    opacity: 1;
+    animation: fadeIn 1s ease-in;
+}
+.unmounted {
+    opacity: 0;
+    animation: fadeOut 3s ease-in;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+  
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* focused portfolio item utility clases */
+.portfolioItemFocused {
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px -1px rgba(0,0,0,.2);
+}

@@ -21,7 +21,7 @@ export default function Hamburger() {
                     <ul>
                         <li><Link href="/" onClick={() => setOpen(false)}>Home</Link></li>
                         <li><Link href="/blog" onClick={() => setOpen(false)}>Blog</Link></li>
-                        <li><Link href="/" onClick={() => setOpen(false)}>Portfolio</Link></li>
+                        <li><Link href="/portfolio" onClick={() => setOpen(false)}>Portfolio</Link></li>
                         <li><Link href="/contact" onClick={() => setOpen(false)}>Contact</Link></li>
                         <li>
                         <div className="mobile-nav-soc-container">

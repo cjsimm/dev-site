@@ -1,5 +1,5 @@
-
 import './globals.css'
+import Image from '@/node_modules/next/image';
 import Link from '@/node_modules/next/link';
 import type { Metadata } from 'next';
 import { Noto_Sans_Mono } from 'next/font/google';
@@ -40,7 +40,7 @@ export default function RootLayout({
               <ul className='navbar-container'>
                 <li><Link className="header-link" href="/">About</Link></li>
                 <li><Link className="header-link" href="/blog">Blog</Link></li>
-                <li><Link className="header-link" href="/portfolio">Portfolio</Link></li>
+                <li><a className="header-link" href="https://github.com/cjsimm" target='_blank'>Portfolio</a></li>
                 <li><Link className="header-link" href="/contact">Contact</Link></li>
               </ul>
             </nav>
