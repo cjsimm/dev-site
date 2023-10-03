@@ -1,7 +1,7 @@
 "use client";
 import styles from './components.module.css';
 import PortfolioMenu from './PortfolioMenu';
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import { portfolioItemData } from '../portfolio.types';
 
 export default function PortfolioAnimation({ portfolioData }: {portfolioData: portfolioItemData[]}) {

@@ -1,8 +1,6 @@
-"use client";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { PortfolioItemDefault, PortfolioItemCollapsed, PortfolioItemExpanded } from "./PortfolioItem";
 import { portfolioItemData } from "../portfolio.types";
-import PortfolioAnimation from "./PortfolioAnimation";
 import styles from './components.module.css';
 
 export default function PortfolioMenu({portfolioData, triggerAnimation}: {portfolioData: portfolioItemData[], triggerAnimation: () => void}): JSX.Element {
