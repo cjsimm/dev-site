@@ -6,7 +6,7 @@ import { portfolioItemData } from "../portfolio.types";
 // and default items 
 type 
 
-export const PortfolioItemImage: React.FC = ({ data: portfolioItemData, isHover: boolean }) => {
+export const PortfolioItemImage: React.FC = ({ data: portfolioItemData, isHover: boolean }) => {PortfolioItemImage
 
     return(
         <p>hello</p>
