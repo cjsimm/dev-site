@@ -2,12 +2,12 @@
 import './globals.css'
 import Link from '@/node_modules/next/link';
 import type { Metadata } from 'next';
-import { Noto_Sans_Mono } from 'next/font/google';
+import { Cutive_Mono } from 'next/font/google';
 import Hamburger from './_components/Hamburger';
-const noto_mono = Noto_Sans_Mono({
+const noto_mono = Cutive_Mono({
   subsets: ['latin'],
   display: 'swap',
-  weight: ['400','500'],
+  weight: ['400',],
 })
 
 export const metadata: Metadata = {

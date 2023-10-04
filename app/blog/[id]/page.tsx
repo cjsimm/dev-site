@@ -29,8 +29,8 @@ export default async function Post({ params }: { params: { id: string } }) {
                 <div className={styles.blogContainer}>
                     <div className={styles.blogHeader}>
                         <h1>{post.title}</h1>
-                        <p>Posted: {post.date}</p>
-                        <p>By: Christopher Simmons</p>
+                        <p>Posted {post.date}</p>
+                        <p>By Christopher Simmons</p>
                     </div>
                     <div className={styles.postContent} dangerouslySetInnerHTML={{ __html: post.text}} />
                 </div>

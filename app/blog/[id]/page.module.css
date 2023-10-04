@@ -7,8 +7,9 @@
 .blogHeader {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.1rem;
     margin-top: 1rem;
+    font-size: 0.8rem;
 }
 .blogHeader h1 {
     font-size: 1.5rem;
@@ -22,10 +23,12 @@
     font-size: 1.2rem;
     margin: 0;
 }
-.postContent h2 {
-    font-size: 1.1rem;
-}
-
-.postContent p {
+.postContent p, .postContent li, .postContent h2, .postContent h3 {
     font-size: 0.8rem;
+}
+.postContent a {
+    color: #8397fc;
+}
+.postContent a:hover {
+    text-decoration: underline;
 }
