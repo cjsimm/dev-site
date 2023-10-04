@@ -22,3 +22,10 @@
     font-size: 1.2rem;
     margin: 0;
 }
+.postContent h2 {
+    font-size: 1.1rem;
+}
+
+.postContent p {
+    font-size: 0.8rem;
+}
