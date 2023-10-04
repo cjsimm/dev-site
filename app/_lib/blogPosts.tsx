@@ -1,8 +1,12 @@
 import path from "path";
 import fs from "fs";
 import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkGfm from 'remark-gfm';
+import remarkRehype from 'remark-rehype';
+import rehypeStringify from 'rehype-stringify';
+
 
 export type blogPostID = string;
 
@@ -76,13 +80,20 @@ export async function getPost(id: string): Promise<blogPost> {
     // Use gray-matter to parse the post metadata section
      const matterResult = matter(fileContents);
     //convert markdown into html string
-    const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-    const contentHtml = processedContent.toString();
+    //const processedContent = await remark()
+    //.use(remarkGfm)
+    //.use(html)
+    //.process(matterResult.content);
+    //const contentHtml = processedContent.toString();
+    const contentHtml = unified()
+      .use(remarkParse) // Parse markdown.
+      .use(remarkGfm) // Support GFM (tables, autolinks, tasklists, strikethrough).
+      .use(remarkRehype) // Turn it into HTML.
+      .use(rehypeStringify) // Serialize HTML.
+      .processSync(matterResult.content)
     return { 
         id,
-        text: contentHtml,
+        text: String(contentHtml),
         ...matterResult.data as {title: string, summary: string, date: string}
     }
 }
