@@ -67,7 +67,7 @@ li {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-bottom: solid rgb(0, 0, 0);
+  border-bottom: 1px solid #ededed;
   background-color: var(--off-white);
   width: 100vw;
   max-width: var(--max-width);

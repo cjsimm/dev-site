@@ -25,7 +25,6 @@ export default async function Post({ params }: { params: { id: string } }) {
     const post = await getPost(params.id);
     return (
         <main>
-            <div className="sectionFillPage bgBlue">
                 <div className={styles.blogContainer}>
                     <div className={styles.blogHeader}>
                         <h1>{post.title}</h1>
@@ -34,7 +33,6 @@ export default async function Post({ params }: { params: { id: string } }) {
                     </div>
                     <div className={styles.postContent} dangerouslySetInnerHTML={{ __html: post.text}} />
                 </div>
-            </div>
        </main>
     )
 }

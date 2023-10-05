@@ -3,6 +3,7 @@
     flex-direction: column;
     gap: 1rem;
     margin: 0vh 3%;
+    background-color: var(--off-white);
 }
 .blogHeader {
     display: flex;
