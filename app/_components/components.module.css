@@ -22,11 +22,11 @@
     flex-direction: column;
     min-width: 100%;
 }
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 915px) {
     /* make portfolio item default view expand to 2 columns on wide devices */
     .portfolioItemContainer {min-width: 50%;}
     /* push the portfolio menu to the centre of the screen on wide devices */
-    .portfolioMenuContainer {margin: 5vh 10vw;}
+    .portfolioMenuContainer {margin: 5vh 5vw;}
 }
 /* interactive button holding the portfolio item thumbnail and text div when everything is collapsed
 expands the portfolio item when clicked
@@ -47,7 +47,7 @@ expands the portfolio item when clicked
 .portfolioItemSmallHover {
     transition: box-shadow 0.5s, transform 0.5s; 
     box-shadow: 0 8px 16px 0 rgba(0,0,0,.2);
-    transform: translateX(-1%) translateY(-1%);
+    transform:  translateY(-1%);
     background-color: #ffffff;
     
 }
@@ -67,7 +67,6 @@ closes the expansion when clicked
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
-    max-width: 1680px;
     min-height: 55vh;
 /*     margin: auto; */
 /*     margin-bottom: 2vh; */
@@ -194,7 +193,6 @@ closes the expansion when clicked
 
 /* focused portfolio item utility clases */
 .portfolioItemFocused {
-    border-radius: 10px;
     background-color: #ffffff;
     box-shadow: 0px 2px 5px -1px rgba(0,0,0,.2);
 }
