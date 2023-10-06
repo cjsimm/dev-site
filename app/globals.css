@@ -57,6 +57,7 @@ ul {
 li {
   text-decoration: none;
   list-style-type: none;
+  max-height: 8vh; /* squeeze mobile nav elements in on landscape view */
 }
 /* header and navbar */
 .site-header {
@@ -215,7 +216,7 @@ li {
 
 
 /* hide navbar and social icons when width too small */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 915px) {
   .navbar-above {
     display: none;
   }
