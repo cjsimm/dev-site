@@ -57,7 +57,6 @@ ul {
 li {
   text-decoration: none;
   list-style-type: none;
-  max-height: 8vh; /* squeeze mobile nav elements in on landscape view */
 }
 /* header and navbar */
 .site-header {
@@ -201,6 +200,9 @@ li {
     margin-top: 20vh;
     justify-content: center;
     align-items: center;
+}
+.mobile-nav > ul > li {
+  max-height: 8vh; /* squeeze mobile nav elements in on landscape view */
 }
 .mobile-nav ul li > a {
   display: inline-block;
