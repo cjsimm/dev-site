@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getPostIDs, getPost } from "@/app/_lib/blogPosts";
 import styles from './page.module.css';
 export const dynamic = 'force-static';
@@ -25,6 +26,7 @@ export default async function Post({ params }: { params: { id: string } }) {
     const post = await getPost(params.id);
     return (
         <main>
+                <Link className={styles.blogBack} href="/blog">{"/ Blog /"}</Link>
                 <div className={styles.blogContainer}>
                     <div className={styles.blogHeader}>
                         <h1>{post.title}</h1>

@@ -9,6 +9,7 @@
   --header-margin: 5vh;
   --footer-height: 2vh;
   --site-wMargin: 0vw;
+  --link-color: #8397fc;
   box-sizing: border-box;
   font-size: 20px;
 
@@ -246,7 +247,7 @@ li {
 
 main {
   width: 100%;
-  margin-top: calc(var(--header-height) + 2%);
+  margin-top: calc(var(--header-height) + 3vh);
 }
 /* Section Styling */
 .sectionBlock {

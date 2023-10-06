@@ -10,6 +10,10 @@
         margin: 0vh 3%;
     }
 }
+.blogBack {
+    margin-left: 2vw;
+    color: var(--link-color);
+}
 .blogHeader {
     display: flex;
     flex-direction: column;
@@ -33,7 +37,7 @@
     font-size: 0.8rem;
 }
 .postContent a {
-    color: #8397fc;
+    color: var(--link-color); 
 }
 .postContent a:hover {
     text-decoration: underline;
