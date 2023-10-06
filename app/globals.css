@@ -69,7 +69,7 @@ li {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #ededed;
-  background-color: var(--off-white);
+  background-color: #ffffff;
   width: 100vw;
   max-width: var(--max-width);
   height: var(--header-height);
