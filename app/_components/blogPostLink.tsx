@@ -9,8 +9,11 @@ export default function BlogPostLink( { data }: { data: blogPostMetadata } ) {
                 <p>-</p>
                 <p>{data.title}</p>
             </div>
-            <p>{data.summary}</p>
-            <p>{"Read More ->"}</p>
+            <div className="blogSummary">
+                <p>-</p>
+                <p>{data.summary}</p>
+            </div>
+            <p>{"Read More..."}</p>
         </Link>
     )
 }

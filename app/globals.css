@@ -231,6 +231,9 @@ li {
   .mobile-nav { 
     display: inline;
   }
+  .blogSummary {
+    display: none;
+  }
 }
 
 main {
@@ -346,10 +349,14 @@ main {
   text-align: left;
 }
 .blogTitle {
-  display: flex;
+ /* display: flex; */
   flex-wrap: wrap;
   gap: 1.5vw;
 }
 .blogTitle p {
   margin: 0 0;
+}
+.blogPostLink > p {
+    margin-top: 10px;
+    margin-left: 1vw;
 }
