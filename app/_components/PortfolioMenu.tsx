@@ -54,8 +54,6 @@ export default function PortfolioMenu({portfolioData, triggerAnimation}: {portfo
         }) 
     ): sortExpanded();
 
-    console.log("portfolio menu is rerendering");
-
     return (
         <>
             {expandedItem}
