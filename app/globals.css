@@ -65,6 +65,9 @@ li {
   text-decoration: none;
   list-style-type: none;
 }
+button {
+    font-family: inherit;
+}
 /* header and navbar */
 .site-header {
   position: fixed;

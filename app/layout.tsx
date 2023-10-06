@@ -4,7 +4,7 @@ import Link from '@/node_modules/next/link';
 import type { Metadata } from 'next';
 import { Cutive_Mono } from 'next/font/google';
 import Hamburger from './_components/Hamburger';
-const noto_mono = Cutive_Mono({
+const cutive_mono = Cutive_Mono({
   subsets: ['latin'],
   display: 'swap',
   weight: ['400',],
@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={noto_mono.className}>
+    <html lang="en" className={cutive_mono.className}>
       <body>
         <div className='header-container'>
           <header className='site-header'>

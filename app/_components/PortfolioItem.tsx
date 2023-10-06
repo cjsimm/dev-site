@@ -52,6 +52,32 @@ export function PortfolioItemDefault(
     );
 }
 
+export function PortfolioItemExpanded(
+    {data, itemID, onExpand}: portfolioItemProps
+    ): JSX.Element {
+
+    const handleClick = () => {
+        onExpand(itemID);
+    } 
+    return (
+        <div className={`${styles.expandedItemContainer} ${styles.portfolioItemFocused}`}> 
+            <section className={styles.expandedItemContentWrapper}>
+                <h1>{data.title}</h1>
+                <ul className={styles.tagList}>
+                    {data.tags.map((tag) => {
+                        return <li className={styles.tagListItem} key={tag}>{tag}</li>
+                    })}
+                </ul>
+                <div className={styles.expandedContent} dangerouslySetInnerHTML={{__html: data.expandedContent}} />
+            </section>
+            <div className={styles.expandedItemButtons}>
+                <button><Link className={styles.expandedItemLink} href={data.href} target="_blank">View</Link></button>
+                <button onClick={handleClick}>Close</button>
+            </div>
+        </div> 
+    )
+}
+
 export function PortfolioItemCollapsed(
     {data, itemID, onExpand}: portfolioItemProps
     ): JSX.Element {
@@ -83,28 +109,3 @@ export function PortfolioItemCollapsed(
     );
 }
 
-export function PortfolioItemExpanded(
-    {data, itemID, onExpand}: portfolioItemProps
-    ): JSX.Element {
-
-    const handleClick = () => {
-        onExpand(itemID);
-    } 
-    return (
-        <div className={`${styles.expandedItemContainer} ${styles.portfolioItemFocused}`}> 
-            <section className={styles.expandedItemContentWrapper}>
-                <h1>{data.title}</h1>
-                <ul className={styles.tagList}>
-                    {data.tags.map((tag) => {
-                        return <li className={styles.tagListItem} key={tag}>{tag}</li>
-                    })}
-                </ul>
-                <div className={styles.expandedContent} dangerouslySetInnerHTML={{__html: data.expandedContent}} />
-            </section>
-            <div className={styles.expandedItemButtons}>
-                <button><Link className={styles.expandedItemLink} href={data.href} target="_blank">View</Link></button>
-                <button onClick={handleClick}>Close</button>
-            </div>
-        </div> 
-    )
-}
