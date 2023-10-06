@@ -6,7 +6,7 @@
 .contentContainer {
     box-sizing: border-box;
     margin: 0 1vw;
-    margin-top: 110px;
+    margin-top: calc(var(--header-height) + 20px);
     padding: 0;
 /*     border: solid black 1px; */
     height: calc(100vh - 110px);
