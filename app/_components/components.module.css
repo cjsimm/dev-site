@@ -32,8 +32,8 @@
 expands the portfolio item when clicked
 */
 .portfolioItemSmall {
-    background: inherit;
-    border: solid #ffffff 5px;
+    background: #ffffff;
+    border: solid #ededed 1px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;

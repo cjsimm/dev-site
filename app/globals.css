@@ -334,10 +334,11 @@ main {
 }
 /* Blogpost Styling */
 .blogPostLink {
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   gap: 1vh;
-  border: solid #ffffff;
+  border: solid #ededed 1px;
   padding: 2vh 2vw;
   transition: transform 0.5s; 
   text-decoration: none;
