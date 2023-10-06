@@ -21,7 +21,6 @@
     display: flex;
     flex-direction: column;
     min-width: 100%;
-    max-height: 40vh;   
 }
 @media only screen and (min-width: 1000px) {
     /* make portfolio item default view expand to 2 columns on wide devices */
