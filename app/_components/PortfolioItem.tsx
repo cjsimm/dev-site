@@ -32,8 +32,8 @@ export function PortfolioItemDefault(
             <button className={`${styles.portfolioItemSmall} ${isHover && styles.portfolioItemSmallHover}`} 
             onMouseEnter={() => {setIsHover(true);}}
             onMouseLeave={() => {setIsHover(false);}}
-            onTouchStart={() => {setIsHover(true);}}
-            onTouchEnd={() => {setIsHover(false);}}
+            //onTouchStart={() => {setIsHover(true);}}
+            //onTouchEnd={() => {setIsHover(false);}}
             onClick={handleClick}>
                 <Image
                     className={styles.portfolioImageDefault}

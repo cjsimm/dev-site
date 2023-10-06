@@ -33,7 +33,7 @@ expands the portfolio item when clicked
 */
 .portfolioItemSmall {
     background: inherit;
-    border: solid var(--off-white) 1px;
+    border: solid #ffffff 5px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;

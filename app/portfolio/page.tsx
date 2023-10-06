@@ -34,10 +34,6 @@ async function getPortfolioData(): Promise<portfolioItemData[]> {
     const expandedContent = fs.readFileSync(path.join(process.cwd(), `/public/portfolio-items/${item.id}/${item.id}.html`), 'utf8');
     return {...item, thumbnail, thumbnailAnimated, expandedContent}
   });
-
-/*   console.log(process.cwd()); */
-
-
   return portfolioContent; 
 }
 
