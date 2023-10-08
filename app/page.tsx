@@ -17,26 +17,30 @@ export default async function Home() {
   });
   return (
     <main>
-      <section className={`sectionBlock flexCentered bgGreen`}>
-        <h1>Hello.</h1>
-        <div className="sectionContent">
-          <p>{"I'm a freelance data and machine learning engineer with an interest in web development and linux. This is a space to host my blog and anything else useful that I'd like to share."}
-          </p>
+        <div className="rowFlex">
+          <section className={`halfPage sectionBlock columnFlex bgGreen`}>
+            <div className="sectionContent">
+                <h1>Hello.</h1>
+              <p>{"I'm a freelance data and machine learning engineer with an interest in web development and linux. This is a space to host my blog and anything else useful that I'd like to share."}
+              </p>
+            </div>
+          </section>
+            <div className="flexCentered halfPage"> 
+          <section className={`sectionBlock flexCentered bgGrey`}>
+            <div className="sectionContent sectionContentCentered">
+              <h1>Find out more</h1>
+              <Link className="largeButton" target="_blank" href="/contact/cv-non-interactive.html">Curriculum Vitae</Link>
+              <p>Also available in <Link target="_blank" href="/contact/cv-non-interactive.pdf">PDF Format</Link></p>
+            </div>
+          </section>
+          <section className={`sectionBlock flexCentered bgBlue`}>
+            <h1>Latest Blog Post</h1>
+            <div className='sectionContent'>
+              <BlogPostLink data={latestBlogPost} />
+            </div>
+          </section>
+            </div> 
         </div>
-      </section>
-      <section className={`sectionBlock flexCentered bgGrey`}>
-        <div className="sectionContent sectionContentCentered">
-          <h1>Find out more</h1>
-          <Link className="largeButton" target="_blank" href="/contact/cv-non-interactive.html">Curriculum Vitae</Link>
-          <p>Also available in <Link target="_blank" href="/contact/cv-non-interactive.pdf">PDF Format</Link></p>
-        </div>
-      </section>
-      <section className={`sectionBlock flexCentered bgBlue`}>
-        <h1>Latest Blog Post</h1>
-        <div className='sectionContent'>
-          <BlogPostLink data={latestBlogPost} />
-        </div>
-      </section>
     </main>
   )
 }
