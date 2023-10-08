@@ -333,17 +333,6 @@ main {
   flex-direction: column;
   margin: 0vh var(--site-wMargin);
 }
-/* Footer */
-.siteFooter {
-  display: flex;
-  flex-direction: row;
-  min-height: var(--footer-height);
-  margin: 0 var(--site-wMargin);
-}
-.siteFooter > p {
-  margin-left: auto;
-  margin-right: 1vw;
-}
 /* Blogpost Styling */
 .blogPostLink {
   background: #ffffff;
