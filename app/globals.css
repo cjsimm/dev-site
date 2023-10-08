@@ -250,6 +250,15 @@ main {
 .sectionContent p {
   text-align: center;
 }
+
+.homeIntro {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2vh 15%;
+  margin-bottom: 4vh;
+}
+
 .largeButton {
   transition: transform 0.3s;
   text-decoration: none;
@@ -382,4 +391,10 @@ main {
   .rowFlex {
     flex-wrap: wrap;
   }
+    .homeIntro {
+        align-items: center
+    }
+    .homeIntro p {
+        text-align: center;
+    }
 }

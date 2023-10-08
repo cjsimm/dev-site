@@ -19,7 +19,7 @@ export default async function Home() {
     <main>
         <div className="rowFlex">
           <section className={`halfPage sectionBlock columnFlex bgGreen`}>
-            <div className="sectionContent">
+            <div className="homeIntro">
                 <h1>Hello.</h1>
               <p>{"I'm a freelance data and machine learning engineer with an interest in web development and linux. This is a space to host my blog and anything else useful that I'd like to share."}
               </p>
