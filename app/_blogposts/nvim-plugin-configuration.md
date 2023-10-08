@@ -512,7 +512,7 @@ Our LSP is working! Now, let's go back to our nvim-cmp configuration and start p
 
 ```lua 
 sources = cmp.config.sources({
-	{ name = "nvim-lsp" }, -- language server
+	{ name = "nvim_lsp" }, -- language server
 	{ name = "luasnip" }, --snippets
 	{ name = "buffer" }, -- text inside buffer
 	{ name = "path" }, -- system paths
