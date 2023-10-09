@@ -350,7 +350,7 @@ main {
   transition: transform 0.5s; 
   text-decoration: none;
   color: black;
-  width: 60vw;
+  width: 100%;
 }
 .blogPostLink > p:last-child {
   font-size: 0.5rem;
