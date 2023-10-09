@@ -41,12 +41,6 @@ a {
   color: var(--text-color);
   text-decoration: none;
 }
-code {
-    font-size: 0.7rem;
-    background: #fff;
-    padding: 0 5px;
-    border: solid #ededed 2px;
-}
 div {
   margin: 0;
   padding: 0;

@@ -6,7 +6,7 @@ import remarkParse from 'remark-parse';
 import remarkGfm from 'remark-gfm';
 import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
-
+import rehypeFormat from 'rehype-format';
 
 export type blogPostID = string;
 
@@ -89,6 +89,7 @@ export async function getPost(id: string): Promise<blogPost> {
       .use(remarkParse) // Parse markdown.
       .use(remarkGfm) // Support GFM (tables, autolinks, tasklists, strikethrough).
       .use(remarkRehype) // Turn it into HTML.
+      .use(rehypeFormat) // respect CR/newline inside markdown codeblocks 
       .use(rehypeStringify) // Serialize HTML.
       .processSync(matterResult.content)
     return { 

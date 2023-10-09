@@ -44,3 +44,20 @@
 .postContent a:hover {
     text-decoration: underline;
 }
+/* single line code */
+.postContent code {
+    font-size: 0.7rem;
+    background: #fff;
+    padding: 0 5px;
+    border: solid #ededed 2px;
+}
+/* multiline code blocks */
+.postContent pre {
+    background: #fff;
+    border: solid #ededed 2px;
+    padding: 10px 10px;
+}
+.postContent pre > code {
+    border: none;
+    background: none;
+}
