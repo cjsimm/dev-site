@@ -27,7 +27,7 @@ NOTE: For Lua (and many plugins to work correctly) make sure that you are on neo
 
 Here's a file structure for the `lua/` directory that separates concerns quite nicely 
 
-| filename | use |
+| Filename | Use |
 | --- | --- |
 | remap.lua | file for vim rebinds |
 | options.lua | file for vim settings |
