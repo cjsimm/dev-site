@@ -543,9 +543,9 @@ The key to continuing on your neovim journey is to learn to not dismiss an annoy
 
 # Sources 
 
-[ThePrimeagen Neovim RC from Scratch](https://www.youtube.com/watch?v=w7i4amO_zaE)
-[neovim docs lua guide](https://neovim.io/doc/user/lua-guide.html)
-[Official neovim LSP docs](https://neovim.io/doc/user/lsp.html)
-[Josean Martinez LSP Setup](https://www.youtube.com/watch?v=NL8D8EkphUw&list=PLnu5gT9QrFg36OehOdECFvxFFeMHhb_07&index=8)
-[lsp-config language server configuration docs](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
+- [ThePrimeagen Neovim RC from Scratch](https://www.youtube.com/watch?v=w7i4amO_zaE)
+- [neovim docs lua guide](https://neovim.io/doc/user/lua-guide.html)
+- [Official neovim LSP docs](https://neovim.io/doc/user/lsp.html)
+- [Josean Martinez LSP Setup](https://www.youtube.com/watch?v=NL8D8EkphUw&list=PLnu5gT9QrFg36OehOdECFvxFFeMHhb_07&index=8)
+- [lsp-config language server configuration docs](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 
